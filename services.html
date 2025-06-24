@@ -1023,6 +1023,7 @@
         <div class="grid-container">
 
           <input
+            id="firstNameInput"
             placeholder="First Name"
             type="text"
             name="firstName"
@@ -1030,12 +1031,14 @@
             required
           />
           <input
+            id="lastNameInput"
             placeholder="Last Name"
             type="text"
             name="lastName"
             class="grid-item-2"
           />
           <input
+            id="phoneInput"
             placeholder="Phone Number"
             type="tel"
             name="phone"
@@ -1044,6 +1047,7 @@
             inputmode="tel"
           />
           <input
+            id="emailInput"
             placeholder="Email"
             type="email"
             name="email"
@@ -1051,6 +1055,7 @@
             required
           />
           <textarea
+            id="messageInput"
             placeholder="Type Your Message"
             name="message"
             class="grid-item-5"
@@ -1070,11 +1075,13 @@
             </label>
           </div>
 
-          <!-- reCAPTCHA v2 -->
+
+          <!-- reCAPTCHA v2 >
           <div
             class="recaptcha-wrapper g-recaptcha mt-3 grid-item-7"
             data-sitekey="6LdKp1grAAAAANb7Dg8nQnEYvuQqysrPWwz8j19M"
-          ></div>
+          ></div-->
+          
 
           <div class="gt-hero-button wow animated-image mt-3 grid-item-8">
             <button id="submitButton" type="submit" class="gt-theme-btn">Submit</button>
@@ -1086,33 +1093,76 @@
   </div>
 </section>
 
-<!-- reCAPTCHA and EmailJS scripts -->
+
+
+<!-- reCAPTCHA and EmailJS scripts >
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
   emailjs.init("w8qNaOHR9Bi8IPEeC"); // Replace this with your actual public key
 
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    // Validate reCAPTCHA
-    const recaptchaResponse = grecaptcha.getResponse();
-    if (!recaptchaResponse) {
-      alert("Please complete the reCAPTCHA.");
-      return;
-    }
+  // ✅ Track submission
+  if (typeof gtag === 'function') {
+    gtag('event', 'submit', {
+      'event_category': 'form',
+      'event_label': 'contact_form'
+    });
+  }
 
-    // Send the form using EmailJS
-    emailjs.sendForm("The_Entity_Studios", "TES_conatct_us_tmlt_01", this)
-      .then(function () {
-        alert("Message sent successfully!");
-        document.getElementById("contact-form").reset();
-        grecaptcha.reset(); // reset reCAPTCHA after success
-      }, function (error) {
-        alert("Sending failed. Please try again later.");
-        console.error("EmailJS error:", error);
+  const recaptchaResponse = grecaptcha.getResponse();
+  if (!recaptchaResponse) {
+    alert("Please complete the reCAPTCHA.");
+    return;
+  }
+
+  emailjs.sendForm("The_Entity_Studios", "TES_conatct_us_tmlt_01", this)
+    .then(function () {
+      alert("Message sent successfully!");
+      document.getElementById("contact-form").reset();
+      grecaptcha.reset();
+    }, function (error) {
+      alert("Sending failed. Please try again later.");
+      console.error("EmailJS error:", error);
+    });
+});
+
+</script-->
+
+
+
+<!-- contact scripts -->
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const firstname = document.getElementById('firstNameInput').value.trim();
+        const lastname = document.getElementById('lastNameInput').value.trim();
+        const email = document.getElementById('emailInput').value.trim();
+        const message = document.getElementById('messageInput').value.trim();
+        if (!email || !firstname || !lastname || !message) {
+          alert('Please fill in all fields.');
+          return;
+        }
+        fetch('/submit', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ firstname, lastname, email, message })
+        })
+        .then(res => res.text())
+        .then(text => {
+          alert(text);
+        })
+        .catch(() => {
+          alert('Error sending magic link.');
+        });
       });
+    }
   });
 </script>
 

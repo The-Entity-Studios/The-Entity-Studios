@@ -544,7 +544,7 @@ At The Entity Studios, we’re not just vendors, we’re creative partners. Whet
                 <div class="col-md-6">
                   <div class="form-clt">
                     <span>First Name</span>
-                    <input type="text" name="firstName" placeholder="First Name" required />
+                    <input id="firstNameInput" type="text" name="firstName" placeholder="First Name" required />
                   </div>
                 </div>
 
@@ -552,7 +552,7 @@ At The Entity Studios, we’re not just vendors, we’re creative partners. Whet
                 <div class="col-md-6">
                   <div class="form-clt">
                     <span>Last Name</span>
-                    <input type="text" name="lastName" placeholder="Last Name" />
+                    <input id="lastNameInput" type="text" name="lastName" placeholder="Last Name" />
                   </div>
                 </div>
 
@@ -560,7 +560,7 @@ At The Entity Studios, we’re not just vendors, we’re creative partners. Whet
                 <div class="col-md-6">
                   <div class="form-clt">
                     <span>Phone Number</span>
-                        <input type="tel" name="phone" placeholder="Phone Number" 
+                        <input id="phoneInput" type="tel" name="phone" placeholder="Phone Number" 
                             inputmode="numeric" 
                             pattern="[0-9]{10,15}" 
                             maxlength="15"
@@ -572,7 +572,7 @@ At The Entity Studios, we’re not just vendors, we’re creative partners. Whet
                 <div class="col-md-6">
                   <div class="form-clt">
                     <span>Email</span>
-                    <input type="email" name="email" placeholder="Your Email" required />
+                    <input id="emailInput" type="email" name="email" placeholder="Your Email" required />
                   </div>
                 </div>
 
@@ -580,7 +580,7 @@ At The Entity Studios, we’re not just vendors, we’re creative partners. Whet
                 <div class="col-12">
                   <div class="form-clt">
                     <span>Type Your Message</span>
-                    <textarea name="message" placeholder="Write your message here..." required></textarea>
+                    <textarea id="messageInput" name="message" placeholder="Write your message here..." required></textarea>
                   </div>
                 </div>
 
@@ -594,15 +594,17 @@ At The Entity Studios, we’re not just vendors, we’re creative partners. Whet
                 </div>
                 </div>
 
-                <!-- reCAPTCHA Centered -->
-                <div class="col-12 d-flex justify-content-center">
-                <div class="g-recaptcha" data-sitekey="6LdKp1grAAAAANb7Dg8nQnEYvuQqysrPWwz8j19M"></div>
-                </div>
+
+                <!-- reCAPTCHA v2 >
+          <div
+            class="recaptcha-wrapper g-recaptcha mt-3 grid-item-7"
+            data-sitekey="6LdKp1grAAAAANb7Dg8nQnEYvuQqysrPWwz8j19M"
+          ></div-->
 
                 <!-- Submit Button Aligned Right -->
                 <div class="col-12 d-flex justify-content-end">
-                <button id="submitButton" type="submit" class="gt-theme-btn">Submit</button>
-                </div>
+  <button id="contactSubmitButton" type="submit" class="gt-theme-btn">Submit</button>
+</div>
 
               </div>
             </form>
@@ -641,33 +643,75 @@ At The Entity Studios, we’re not just vendors, we’re creative partners. Whet
   </div>
 </section>
 
-<!-- EmailJS & reCAPTCHA scripts -->
+<!-- reCAPTCHA and EmailJS scripts >
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
-  emailjs.init("w8qNaOHR9Bi8IPEeC"); // Your EmailJS public key
+  emailjs.init("w8qNaOHR9Bi8IPEeC"); // Replace this with your actual public key
 
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    const recaptchaResponse = grecaptcha.getResponse();
-    if (!recaptchaResponse) {
-      alert("Please complete the reCAPTCHA.");
-      return;
-    }
+  // ✅ Track submission
+  if (typeof gtag === 'function') {
+    gtag('event', 'submit', {
+      'event_category': 'form',
+      'event_label': 'contact_form'
+    });
+  }
 
-    emailjs.sendForm("The_Entity_Studios", "TES_conatct_us_tmlt_01", this)
-      .then(() => {
-        alert("Message sent successfully!");
-        document.getElementById("contact-form").reset();
-        grecaptcha.reset();
-      }, (error) => {
-        alert("Sending failed. Please try again later.");
-        console.error("EmailJS error:", error);
+  const recaptchaResponse = grecaptcha.getResponse();
+  if (!recaptchaResponse) {
+    alert("Please complete the reCAPTCHA.");
+    return;
+  }
+
+  emailjs.sendForm("The_Entity_Studios", "TES_conatct_us_tmlt_01", this)
+    .then(function () {
+      alert("Message sent successfully!");
+      document.getElementById("contact-form").reset();
+      grecaptcha.reset();
+    }, function (error) {
+      alert("Sending failed. Please try again later.");
+      console.error("EmailJS error:", error);
+    });
+});
+
+</script-->
+
+<!-- contact scripts -->
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const firstname = document.getElementById('firstNameInput').value.trim();
+        const lastname = document.getElementById('lastNameInput').value.trim();
+        const email = document.getElementById('emailInput').value.trim();
+        const message = document.getElementById('messageInput').value.trim();
+        if (!email || !firstname || !lastname || !message) {
+          alert('Please fill in all fields.');
+          return;
+        }
+        fetch('/submit', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ firstname, lastname, email, message })
+        })
+        .then(res => res.text())
+        .then(text => {
+          alert(text);
+        })
+        .catch(() => {
+          alert('Error sending magic link.');
+        });
       });
+    }
   });
 </script>
+
 
 
 
