@@ -189,6 +189,45 @@
       });
      }
 
+
+//>> Service Slider Start <<//
+if ($('.gt-service-slider').length > 0) {
+  const gtServiceSlider = new Swiper(".gt-service-slider", {
+    spaceBetween: 30,
+    speed: 4300,
+    loop: true,
+    autoplay: {
+      delay: 16000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".array-prev",
+      prevEl: ".array-next",
+    },
+    breakpoints: {
+      1399: {
+        slidesPerView: 1,
+      },
+      1199: {
+        slidesPerView: 1,
+      },
+      991: {
+        slidesPerView: 1,
+      },
+      767: {
+        slidesPerView: 1,
+      },
+      575: {
+        slidesPerView: 1,
+      },
+      0: {
+        slidesPerView: 1,
+      },
+    },
+  });
+}
+
+
      //>> Gt Popular Slider Start <<//
      if($('.gt-popular-slider').length > 0) {
       const gtPopularSlider = new Swiper(".gt-popular-slider", {
