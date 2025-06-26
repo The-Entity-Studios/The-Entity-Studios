@@ -1149,7 +1149,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
           alert('Please fill in all fields.');
           return;
         }
-        fetch('/submit', {
+        fetch('http://52.55.154.172:3003/submit', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({ firstname, lastname, email, message })
