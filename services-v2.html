@@ -996,6 +996,7 @@
 
       
       <div class="swiper gt-service-slider">
+                <div class="vertical-text2">Animation</div>
         <div class="swiper-wrapper">
 
           <!-- Slide 1 -->
@@ -1115,8 +1116,11 @@
   
   <div class="container" style="max-width: 1200px; min-height: auto;">
     <div class="gt-team-wrapper position-relative">
+      
 
       <div class="swiper gt-service-slider">
+        <div class="vertical-text">Motion Capture</div>
+
         <div class="swiper-wrapper">
 
           <!-- Slide 1 -->
@@ -1193,7 +1197,48 @@
 
 </section>
 
+<style>
+.gt-team-wrapper {
+  position: relative;
+}
 
+.vertical-text {
+  position: absolute;
+  top: 80%;
+  right: -330px;  /* Push completely outside container */
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left top;
+  font-size: 3rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px red; /* Outline text */
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.vertical-text2 {
+  position: absolute;
+  top: 50%;
+  right: -180px;  /* Push completely outside container */
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left top;
+  font-size: 3rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px red; /* Outline text */
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10;
+}
+
+
+
+</style>
 
 <style>
 /* === Header Text === */
