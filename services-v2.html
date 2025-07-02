@@ -109,6 +109,16 @@
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"></div>
 
+<style>
+  @media (max-width: 1024px) {
+  .mouseCursor {
+    display: none !important;
+  }
+}
+
+</style>
+
+
         <!-- Offcanvas Area Start -->
  <div class="fix-area">
             <div class="offcanvas__info">
@@ -838,20 +848,160 @@
 
 
 
+<style>
+    #services {
+      position: relative;
+      min-height: 600px;
+    }
 
+      #lottie-top-animation {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(1);
+        transform-origin: center center; /* 👈 This ensures scaling happens from the center */
+        width: 600px;
+        height: 250px;
+        z-index: -1;
+        pointer-events: none;
+        transition: transform 1s ease;
+        filter: hue-rotate(150deg);
+
+      }
+
+
+#lottie-top-animation-duplicate {
+  position: absolute; /* or relative/fixed based on your layout */
+  top: -12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 250px;
+  z-index: -1;
+  pointer-events: none;
+  filter: hue-rotate(150deg);
+
+  
+}
+
+
+
+#lottie-extra-animation-1, #lottie-extra-animation-2 {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#lottie-extra-animation-1 {
+  transform: translate(-50%, -50%) rotate(90deg) scale(.5);
+}
+
+#lottie-extra-animation-2 {
+  transform: translate(-50%, -50%) rotate(90deg) scale(.5);
+}
+
+
+
+
+
+    @media (max-width: 1024px) {
+      #lottie-top-animation,
+      #lottie-bottom-animation {
+        display: none !important;
+      }
+    }
+
+.animated-heading-wrapper {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.animated-heading {
+  display: inline-block;
+  font-weight: 900;
+  font-size: 3rem;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+/* ✅ Outline only for static "We Do" */
+.static-text {
+  color: transparent;
+  -webkit-text-stroke: 0.5px white;
+  text-stroke: 0.5px white;
+}
+
+/* ✅ Filled red, no stroke for animated words */
+.animated-word {
+  display: inline-block;
+  color: red;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  white-space: nowrap;
+}
+
+
+.animated-word-wrapper {
+  display: inline-block;
+  min-width: 150px;
+  vertical-align: bottom;
+}
+
+.animated-word {
+  display: inline-block;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+</style>
 
 <!-- GT Team Section Modified Start -->
 <section id="services" class="shake-horizontal gt-service-section section-padding fix d-flex align-items-center justify-content-center">
+  
+<div class="animated-heading-wrapper">
+  <h2 class="animated-heading">
+    <span class="static-text">We Do&nbsp;</span>
+    <span class="animated-word-wrapper">
+      <span class="animated-word">Rigging</span>
+    </span>
+  </h2>
+</div>
+
+
+
+
+
+
+
+  <!-- Lottie animation container -->
+<div id="lottie-top-animation" class="position-absolute"></div>
+<div id="lottie-extra-animation-1" class="position-absolute"></div>
+
   <div class="container" style="max-width: 1200px; min-height: auto;">
     <div class="gt-team-wrapper position-relative">
 
+
+      
       <div class="swiper gt-service-slider">
         <div class="swiper-wrapper">
 
           <!-- Slide 1 -->
           <div class="swiper-slide">
             <div class="service-section img-1">
-              <h2>Rigging &<br>Character Setup</h2>
+              <h2>Rigging &<br> <span style="color: red;"> Character Setup</span></h2>
               <div class="service-list-wrapper">
               <ul class="list-unstyled ps-3">
                 <li>• Custom skeleton creation tailored for game-ready characters</li>
@@ -867,7 +1017,7 @@
           <!-- Slide 2 -->
           <div class="swiper-slide">
             <div class="service-section img-2">
-              <h2>Technical Integration <br> for Unreal & Unity</h2>
+              <h2>Technical Integration <br> <span style="color: red;">for Unreal & Unity </span> </h2>
                 <div class="service-list-wrapper">
               <ul class="list-unstyled ps-3">
                 <li>• Animation implementation and state machine setup</li>
@@ -883,7 +1033,7 @@
           <!-- Slide 3 -->
           <div class="swiper-slide">
             <div class="service-section img-3">
-              <h2>Cinematic & <br> Gameplay Animation</h2>
+              <h2>Cinematic & <br> <span style="color: red;"> Gameplay Animation </span> </h2>
                 <div class="service-list-wrapper">
               <ul class="list-unstyled ps-3">
                 <li>• High-quality keyframe and mocap-driven animations</li>
@@ -895,6 +1045,7 @@
               </div>
             </div>
           </div>
+          
 
           <!-- Slide 4 -->
           <!-- <div class="swiper-slide">
@@ -934,7 +1085,13 @@
       <div class="array-buttons wow fadeInUp position-absolute w-100 d-flex justify-content-end" style="bottom: 10px; z-index: 10;" data-wow-delay=".5s">
         <button class="array-prev me-2"><i class="fa-solid fa-arrow-up"></i></button>
         <button class="array-next"><i class="fa-solid fa-arrow-down"></i></button>
+        <a href="javascript:void(0);" class="scroll-to-motion gt-theme-btn gt-style-border">Motion Capture
+          </a>
+
       </div>
+      <h6 class="text-align-last"> Swipe to see more</h6>
+      
+<div id="lottie-extra-animation" class="position-absolute"></div>
 
     </div>
   </div>
@@ -953,6 +1110,9 @@
 
 <!-- GT Team Section Modified Start -->
 <section id="motion" class="shake-horizontal gt-service-section section-padding fix d-flex align-items-center justify-content-center">
+  <!-- New container where you want the duplicate -->
+<div id="lottie-top-animation-duplicate"></div>
+  
   <div class="container" style="max-width: 1200px; min-height: auto;">
     <div class="gt-team-wrapper position-relative">
 
@@ -962,7 +1122,7 @@
           <!-- Slide 1 -->
           <div class="swiper-slide">
             <div class="service-section img-1">
-              <h2>Motion Capture Cleanup<br>& Processing</h2>
+              <h2>Motion Capture Cleanup<br> <span style="color: red;">& Processing </span> </h2>
               <div class="service-list-wrapper">
               <ul class="list-unstyled ps-3">
                 <li><i class="fa-solid fa-check"></i> High-precision marker data cleanup (optical & inertial)</li>
@@ -976,7 +1136,7 @@
           <!-- Slide 2 -->
           <div class="swiper-slide">
             <div class="service-section img-2">
-              <h2>Retargeting & <br> Motion Editing</h2>
+              <h2>Retargeting & <br> <span style="color: red;"> Motion Editing </span> </h2>
                 <div class="service-list-wrapper">
               <ul class="list-unstyled ps-3">
                 <li><i class="fa-solid fa-check"></i> Seamless retargeting of mocap data to various character rigs</li>
@@ -990,7 +1150,7 @@
           <!-- Slide 3 -->
           <div class="swiper-slide">
             <div class="service-section img-3">
-              <h2>Facial Motion Capture <br> & Animation</h2>
+              <h2>Facial Motion Capture <br> <span style="color: red;"> & Animation </span> </h2>
                 <div class="service-list-wrapper">
               <ul class="list-unstyled ps-3">
                 <li><i class="fa-solid fa-check"></i> Facial data tracking and solving for expressive performances</li>
@@ -1005,7 +1165,7 @@
           <!-- Slide 4 -->
           <div class="swiper-slide">
             <div class="service-section img-4">
-              <h2 class="fw-bold lh-base m-0">Cinematic & Gameplay <br> Animation</h2>
+              <h2 class="fw-bold lh-base m-0">Cinematic & Gameplay <br> <span style="color: red;">Animation </span> </h2>
                 <div class="service-list-wrapper">
               <ul class="service-list">
                 <li><i class="fa-solid fa-check"></i> Mocap-driven animation for in-game cinematics and cutscenes</li>
@@ -1024,9 +1184,13 @@
         <button class="array-prev me-2"><i class="fa-solid fa-arrow-up"></i></button>
         <button class="array-next"><i class="fa-solid fa-arrow-down"></i></button>
       </div>
+            <h6 class="text-align-last"> Swipe to see more</h6>
 
     </div>
   </div>
+<div id="lottie-extra-animation-2" class="position-absolute"></div>
+
+
 </section>
 
 
@@ -1076,10 +1240,12 @@
 .service-section h2 {
   font-size: 54px;
   margin-bottom: 20px;
+      text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+
 }
 
 .service-section ul li {
-  font-size: 15px;
+  font-size: 25px;
   line-height: 1.6;
   text-transform: none;
   text-align-last: left;
@@ -1775,6 +1941,87 @@
 
 </footer>
               
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Top animation
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-top-animation'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://lottie.host/c44ba00f-3707-4bb4-a4d6-2cc65afa0202/Wo7nGYJ2zZ.json'
+    });
+
+lottie.loadAnimation({
+  container: document.getElementById('lottie-top-animation-duplicate'), // New container
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'https://lottie.host/c44ba00f-3707-4bb4-a4d6-2cc65afa0202/Wo7nGYJ2zZ.json' // Same animation JSON path
+});
+
+
+const animationPath = 'https://lottie.host/717cca96-de40-4072-8cee-e30390ee9cf7/4OMvccFHcx.json';
+
+lottie.loadAnimation({
+  container: document.getElementById('lottie-extra-animation-1'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: animationPath
+});
+
+lottie.loadAnimation({
+  container: document.getElementById('lottie-extra-animation-2'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: animationPath
+});
+
+
+        // ⏱️ Hide after 10 seconds
+    setTimeout(() => {
+      const el = document.getElementById('lottie-extra-animation');
+      el.style.opacity = '0';
+      el.style.transition = 'opacity 1s ease';
+    }, 10000); // 10000 ms = 10 seconds
+  });
+</script>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const words = ["Rigging", "Modeling", "Animation", "VFX", "Texturing", "Motion Capture"];
+    const wordEl = document.querySelector(".animated-word");
+    let i = 0;
+
+    setInterval(() => {
+      wordEl.style.opacity = 0;
+      wordEl.style.transform = 'translateX(20px)';
+
+      setTimeout(() => {
+        i = (i + 1) % words.length;
+        wordEl.textContent = words[i];
+        wordEl.style.opacity = 1;
+        wordEl.style.transform = 'translateX(0)';
+      }, 300);
+    }, 2500);
+  });
+</script>
+
+
+
+
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+
 
         <!-- reCAPTCHA and EmailJS scripts -->
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
