@@ -223,6 +223,8 @@
 
 
 <style>
+
+
     /* ===== HEADER BACKGROUND CUSTOMIZATION ===== */
     /* Base styles for the header */
     .header-1 {
@@ -766,38 +768,16 @@
 
 
 
-
-
-
-
-
-
-<!-- GT Newsletter Section Start -->
-<section class="gt-newsletter-section fix mb-4 position-relative">
-  <div class="container py-5">
-    <div class="gt-newsletter-wrapper bg-cover position-relative d-flex justify-content-end text-end p-5"
-         style="background-image: url(assets/img/home-1/cta/newsletter-bg.avif);">
-
-      <!-- Bottom-center aligned drive image -->
-      <div class="shape position-absolute bottom-0 start-50 translate-middle-x">
-        <img src="assets/img/home-1/cta/drive.avif" alt="img">
-      </div>
-
-      <!-- Right-aligned heading and button -->
-      <div class="gt-games-content" style="max-width: 500px;">
-        <h3 class="text-white tx-title sec_title tz-itm-title tz-itm-anim">
-          Learn more about
-        </h3>
-
-        <div class="gt-button top_view_2 item-hover mt-3">
-          <a href="projects.html" class="gt-theme-btn gt-style-border">
-            Our Projects
-          </a>
-        </div>
-      </div>
-    </div>
+  <!-- Animated Heading -->
+  <div class="animated-heading-wrapper">
+    <h2 class="animated-heading">
+      <span class="static-text">We Do&nbsp;</span>
+      <span class="animated-word-wrapper">
+        <span class="animated-word">Rigging</span>
+      </span>
+    </h2>
   </div>
-</section>
+
 
 
 
@@ -846,15 +826,7 @@
             </div>
        </section>
 
-  <!-- Animated Heading -->
-  <div class="animated-heading-wrapper">
-    <h2 class="animated-heading">
-      <span class="static-text">We Do&nbsp;</span>
-      <span class="animated-word-wrapper">
-        <span class="animated-word">Rigging</span>
-      </span>
-    </h2>
-  </div>
+
 
 <style>
 #services {
@@ -869,22 +841,47 @@
 /* Top animation positioning */
 #lottie-top-animation {
   position: absolute;
-  top: -180px; /* Adjust this value to move it down inside container */
+  top: -180px;      /* Keep this as your desired position */
   left: 50%;
-  transform: translateX(-50%) scale(1);
-  transform-origin: center center; /* Ensures scaling happens from center */
+  transform: translateX(-50%); /* Only horizontal centering, no scale */
   width: 600px;
   height: 250px;
-  z-index: -1;
+  z-index: -1;      /* Keep animation behind */
   pointer-events: none;
-  transition: transform 1s ease;
   filter: hue-rotate(150deg);
+  transition: transform 1s ease;
 }
+
+#lottie-top-animation .overlay-text {
+  position: absolute;
+  top: 50%;          /* Vertical center */
+  left: 50%;         /* Horizontal center */
+  transform: translate(-50%, -50%); /* Center the paragraph */
+  color: white;
+  z-index: 10;       /* Make sure it appears on top */
+  pointer-events: auto;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  user-select: text;
+  white-space: normal;
+}
+.overlay-text {
+  text-align: center;
+  text-shadow: 2px 2px 2px #000000;
+    z-index: 20;
+  color: white;
+  font-size: 1.2rem;
+  top: 0;
+  
+  
+}
+
 
 
 #lottie-top-animation-duplicate {
   position: absolute; /* or relative/fixed based on your layout */
-  top: -9%;
+  top: -12%;
   left: 50%;
   transform: translateX(-50%);
   width: 600px;
@@ -1030,6 +1027,9 @@
       <!-- Lottie animation container (top) -->
       <div id="lottie-top-animation" class="position-absolute"></div>
 
+ <!-- Overlay paragraph -->
+  <p class="overlay-text">Your overlay paragraph text here. This text is on top of the animation without shifting it.</p>
+
       <!-- Swiper slider for services -->
       <div class="swiper gt-service-slider">
 
@@ -1111,7 +1111,7 @@
 </section>
 
 
-<div class="text-center">
+<div class="text-center bg-black">
   <a href="javascript:void(0);" class="scroll-to-motion gt-theme-btn gt-style-border d-inline-block">Explore Motion Capture</a>
 </div>
 <style>
@@ -1126,10 +1126,13 @@
 </style>
 
 <!-- GT Team Section: Motion Capture Services -->
-<section id="motion" class="shake-horizontal gt-service-section section-padding fix d-flex align-items-center justify-content-center mt-4">
+<section id="motion" class="shake-horizontal onepad gt-service-section section-padding fix d-flex align-items-center justify-content-center">
 
   <!-- Duplicate Lottie animation at the top -->
   <div id="lottie-top-animation-duplicate"></div>
+
+  <!-- ✅ Overlay paragraph -->
+  <p class="overlay-text2">Your overlay paragraph text here. This text is on top of the animation without shifting it.</p>
 
   <!-- Container for the content -->
   <div class="container" style="max-width: 1200px;">
@@ -1226,17 +1229,32 @@
       <!-- Swipe instruction -->
       <h6 class="text-align-last">Swipe to see more</h6>
 
-        <!-- Additional Lottie animation -->
-    <div id="lottie-extra-animation-2" class="position-absolute"></div>
-
+      <!-- Additional Lottie animation -->
+      <div id="lottie-extra-animation-2" class="position-absolute"></div>
 
     </div> <!-- End .gt-team-wrapper -->
   </div> <!-- End .container -->
 
-
 </section>
 
 <style>
+.onepad {
+  padding-top: 50%;
+}
+
+.overlay-text2 {
+  position: absolute;
+  z-index: 20;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  top: 6%;
+}
+
+
+
 .gt-team-wrapper {
   position: relative;
 }
@@ -1393,7 +1411,7 @@
 
   /* Padding above slider (optional if vertical arrows or labels used) */
   .gt-service-slider {
-    padding-top: 30px;
+    padding-top: 0px;
   }
 
   /* Responsive card container */
@@ -1478,7 +1496,32 @@
 </style>
 
 
+<!-- GT Newsletter Section Start -->
+<section class="gt-newsletter-section fix mb-4 position-relative">
+  <div class="container py-5">
+    <div class="gt-newsletter-wrapper bg-cover position-relative d-flex justify-content-end text-end p-5"
+         style="background-image: url(assets/img/home-1/cta/newsletter-bg.avif);">
 
+      <!-- Bottom-center aligned drive image -->
+      <div class="shape position-absolute bottom-0 start-50 translate-middle-x">
+        <img src="assets/img/home-1/cta/drive.avif" alt="img">
+      </div>
+
+      <!-- Right-aligned heading and button -->
+      <div class="gt-games-content" style="max-width: 500px;">
+        <h3 class="text-white tx-title sec_title tz-itm-title tz-itm-anim">
+          Learn more about
+        </h3>
+
+        <div class="gt-button top_view_2 item-hover mt-3">
+          <a href="projects.html" class="gt-theme-btn gt-style-border">
+            Our Projects
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
@@ -2186,7 +2229,7 @@ lottie.loadAnimation({
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const words = ["Rigging", "Modeling", "Animation", "VFX", "Games", "Motion Capture"];
+    const words = ["Rigging", "Cinematic Animation", "Gameplay Animation", "Motion Capture Cleanup", "Motion Editing", "Facial Motion Capture"];
     const wordEl = document.querySelector(".animated-word");
     let i = 0;
 
