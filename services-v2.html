@@ -1028,7 +1028,7 @@
 
   <!-- Main container -->
   <div class="container" style="max-width: 1200px; min-height: auto;">
-    <div id="services"  class="gt-team-wrapper position-relative">
+    <div class="gt-team-wrapper position-relative">
 
       <!-- Lottie animation container (top) -->
       <div id="lottie-top-animation" class="position-absolute"></div>
@@ -1037,7 +1037,7 @@
   <h5 class="overlay-text text-center mb-5">From keyframe to engine-ready, our animations are crafted for expressive performance and seamless <br> real-time integration, powering everything from gameplay to cinematics.</h5>
 
       <!-- Swiper slider for services -->
-      <div class="swiper gt-service-slider">
+      <div id="services"  class="swiper gt-service-slider">
 
         <!-- Vertical text label -->
         <div class="vertical-text2">Animation</div>
@@ -1118,8 +1118,17 @@
 
 
 <div class="text-center bg-black">
-  <a href="javascript:void(0);" class="scroll-to-motion gt-theme-btn gt-style-border d-inline-block">Explore Motion Capture</a>
+  <a href="javascript:void(0);" class="custom-offset scroll-to-motion gt-theme-btn gt-style-border d-inline-block">Explore Motion Capture</a>
 </div>
+
+<style>
+  .custom-offset {
+    position: relative;
+    top: -100px; /* moves button 50px to the right */
+    z-index: 10;
+  }
+</style>
+
 <style>
 
 .shake-horizontal{-webkit-animation:shake-horizontal 2s cubic-bezier(.455,.03,.515,.955) 2s both;animation:shake-horizontal 2s cubic-bezier(.455,.03,.515,.955) 2s both}
@@ -1517,7 +1526,7 @@
       <!-- Right-aligned heading and button -->
       <div class="gt-games-content" style="max-width: 500px;">
         <h3 class="text-white tx-title sec_title tz-itm-title tz-itm-anim">
-          Learn more about
+          Learn about
         </h3>
 
         <div class="gt-button top_view_2 item-hover mt-3">
