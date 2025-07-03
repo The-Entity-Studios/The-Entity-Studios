@@ -767,18 +767,20 @@
 
 
 
-
   <!-- Animated Heading -->
-  <div class="animated-heading-wrapper">
-    <h2 class="animated-heading">
-      <span class="static-text">We Do&nbsp;</span>
-      <span class="animated-word-wrapper">
-        <span class="animated-word">Rigging</span>
-      </span>
-    </h2>
-  </div>
+                              <div>
+                                  <header class="gt-section-title-2 text-center">
+                                  <h6 class="subtitle tz-sub-tilte tz-sub-anim tx-subTitle fs-4">
+                                    We Do
+                                  </h6>
+                                    <div class="animated-word-wrapper">
+                                    <h2 class="animated-word">Rigging</h2>
+                                    </div>
+                                </header>
+                              </div>
 
 
+<div style="padding: 20px;"> </div>
 
 
        <section>
@@ -841,7 +843,7 @@
 /* Top animation positioning */
 #lottie-top-animation {
   position: absolute;
-  top: -180px;      /* Keep this as your desired position */
+  top: -105px;      /* Keep this as your desired position */
   left: 50%;
   transform: translateX(-50%); /* Only horizontal centering, no scale */
   width: 600px;
@@ -866,8 +868,10 @@
   user-select: text;
   white-space: normal;
 }
-.overlay-text {
-  text-align: center;
+.overlay-text h5 {
+
+  
+  align-items: center;
   text-shadow: 2px 2px 2px #000000;
     z-index: 20;
   color: white;
@@ -881,7 +885,7 @@
 
 #lottie-top-animation-duplicate {
   position: absolute; /* or relative/fixed based on your layout */
-  top: -12%;
+  top: -6%;
   left: 50%;
   transform: translateX(-50%);
   width: 600px;
@@ -949,15 +953,17 @@
 
 /* ✅ Filled red, no stroke for animated words */
 .animated-word {
-  display: inline-block;
-  color: red;
+  display: block;
+  color: transparent;
   transition: opacity 0.4s ease, transform 0.4s ease;
   white-space: nowrap;
+    -webkit-text-stroke: 1px red;
+  text-stroke: 1px red;
 }
 
 
 .animated-word-wrapper {
-  display: inline-block;
+  display: block;
   min-width: 150px;
   vertical-align: bottom;
 }
@@ -1028,7 +1034,7 @@
       <div id="lottie-top-animation" class="position-absolute"></div>
 
  <!-- Overlay paragraph -->
-  <p class="overlay-text">Your overlay paragraph text here. This text is on top of the animation without shifting it.</p>
+  <h5 class="overlay-text text-center mb-5">From keyframe to engine-ready, our animations are crafted for expressive performance and seamless <br> real-time integration, powering everything from gameplay to cinematics.</h5>
 
       <!-- Swiper slider for services -->
       <div class="swiper gt-service-slider">
@@ -1132,7 +1138,7 @@
   <div id="lottie-top-animation-duplicate"></div>
 
   <!-- ✅ Overlay paragraph -->
-  <p class="overlay-text2">Your overlay paragraph text here. This text is on top of the animation without shifting it.</p>
+  <p class="overlay-text2 d-flex">From raw capture data to polished performance, our mocap solutions deliver clean, expressive animation,  <br>ready for seamless integration across gameplay, cinematics, and virtual production.</p>
 
   <!-- Container for the content -->
   <div class="container" style="max-width: 1200px;">
@@ -1186,7 +1192,7 @@
             <div class="service-section img-3">
               <h2>
                 Facial Motion Capture<br>
-                <span style="color: red;">& Animation</span>
+                <span style="color: red;">Solutions</span>
               </h2>
               <div class="service-list-wrapper">
                 <ul class="list-unstyled ps-3">
@@ -1250,7 +1256,8 @@
   padding: 10px 15px;
   border-radius: 8px;
   text-align: center;
-  top: 6%;
+  top: 2%;
+  max-width: 1200px;
 }
 
 
@@ -1398,7 +1405,7 @@
 
   /* === Layout Wrapper for Entire Services Section === */
   .gt-service-section {
-    padding: 100px 20px; /* Increased padding + horizontal breathing room */
+    padding: 150px 20px; /* Increased padding + horizontal breathing room */
     color: #ffffff;
   }
 
@@ -2229,7 +2236,7 @@ lottie.loadAnimation({
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const words = ["Rigging", "Cinematic Animation", "Gameplay Animation", "Motion Capture Cleanup", "Motion Editing", "Facial Motion Capture"];
+    const words = ["Rigging & Character Setup", "Motion Capture Cleanup", "Cinematic Animation", "Motion Editing", "Gameplay Animation", "Facial Animation"];
     const wordEl = document.querySelector(".animated-word");
     let i = 0;
 
