@@ -912,7 +912,30 @@
 }
 
 
+#bg-image-replacement {
+  position: absolute; /* or relative/fixed based on your layout */
+  top: -6%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 250px;
+  z-index: -1;
+  pointer-events: none;
+  object-fit: cover; /* Optional: helps ensure the image fills the area */
+}
 
+
+#bg-image-replacement2 {
+  position: absolute; /* or relative/fixed based on your layout */
+  top: -16%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 250px;
+  z-index: -1;
+  pointer-events: none;
+  object-fit: cover; /* Optional: helps ensure the image fills the area */
+}
 
 
 
@@ -1014,11 +1037,8 @@
 }
 
 
-
-
-
-
 </style>
+
 
 
 <!-- GT Team Section Modified Start -->
@@ -1031,8 +1051,10 @@
     <div class="gt-team-wrapper position-relative">
 
       <!-- Lottie animation container (top) -->
-      <div id="lottie-top-animation" class="position-absolute"></div>
+      <!-- <div id="lottie-top-animation" class="position-absolute"></div> -->
+<img id="bg-image-replacement2" src="assets/img/home-3/bgred.png" alt="redbg">
 
+    
  <!-- Overlay paragraph -->
   <h5 class="overlay-text text-center mb-5 tz-itm-title tz-itm-anim">From keyframe to engine-ready, our animations are crafted for expressive performance and seamless <br> real-time integration, powering everything from gameplay to cinematics.</h5>
 
@@ -1144,7 +1166,8 @@
 <section id="motion" class="shake-horizontal onepad gt-service-section section-padding fix d-flex align-items-center justify-content-center">
 
   <!-- Duplicate Lottie animation at the top -->
-  <div id="lottie-top-animation-duplicate"></div>
+  <!-- <div id="lottie-top-animation-duplicate"></div> -->
+<img id="bg-image-replacement" src="assets/img/home-3/bgred.png" alt="redbg">
 
   <!-- ✅ Overlay paragraph -->
   <p class="overlay-text2 tz-itm-title tz-itm-anim">From raw capture data to polished performance, our mocap solutions deliver clean, <br> expressive animation, ready for seamless integration across gameplay, cinematics, and virtual production.</p>
@@ -1627,6 +1650,7 @@
   overflow: hidden;
   margin: 0;  /* remove potential outside spacing */
   padding: 0; /* remove inside spacing */
+  z-index: -30;
 }
 
 .gaming-overlay {
@@ -1646,11 +1670,14 @@
 .left-image {
   left: 0;
   bottom: 0;
+  z-index: -10;
 }
 
 .right-image {
   right: 0;
   bottom: 0;
+    z-index: -10;
+
 }
 </style>
 
