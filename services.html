@@ -1053,7 +1053,7 @@
   }
 
   .animated-heading {
-    font-size: 2rem;
+    font-size: 1.6rem;
     white-space: normal; /* Allow wrapping */
     line-height: 1.3;
   }
@@ -1064,7 +1064,7 @@
   }
 
   .animated-word {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     display: block;
     margin-top: 8px;
   }
@@ -1200,7 +1200,7 @@
 
   <style>
     /* mobile-only */
-    @media (min-width: 576px) {
+    @media (min-width: 899px) {
       .mobile-only { display: none !important; }
     }
 
@@ -1218,6 +1218,7 @@
       margin-bottom: 1rem;
       position: relative;
       height: 200px; /* initial collapsed height */
+      gap: 40px;
     }
 
     .accordion-card.open .accordion-title {
@@ -1294,7 +1295,7 @@
 
 <!-- Motion Solutions Section Heading -->
 <div class="container-fluid mobile-only pt-4 pb-2 px-3 text-center">
-  <h4 class="text-white fw-bold mb-2 tz-itm-title tz-itm-anim" style="font-size: 1.4rem;">
+  <h4 class="text-white fw-bold mb-2 tz-itm-title tz-itm-anim"  id="mob-service1" style="font-size: 1.4rem;">
     <span class="color-red"> ANIMATION </span> SOLUTIONS
   </h4>
   <p class="tz-itm-title tz-itm-anim" style="font-size: 1rem; line-height: 1.5; color: #727272;">
@@ -1307,7 +1308,7 @@
   <div class="accordion-wrapper" id="accordion">
 
     <!-- Card 1 -->
-    <div class="accordion-card" data-index="0" id="mob-service1">
+    <div class="accordion-card" data-index="0">
       <button class="accordion-btn" onclick="toggleCard(this)">
         <img class="thumbnail" src="assets/img/breadcrumb.avif" alt="Rigging thumbnail">
         <div class="toggle-icon">▼</div>
@@ -1396,7 +1397,7 @@
 </script>
 
 <!-- Motion Solutions Section Heading -->
-<div class="container-fluid mobile-only pt-4 pb-2 px-3 text-center">
+<div class="container-fluid mobile-only mt-5 pt-4 pb-2 px-3 text-center">
   <h4 class="text-white fw-bold mb-2 tz-itm-title tz-itm-anim" id="mob-service2" style="font-size: 1.4rem;">
     <span class="color-red"> MOCAP </span> SOLUTIONS
   </h4>
@@ -2672,7 +2673,7 @@ lottie.loadAnimation({
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const words = ["Rigging & Character Setup", "Motion Capture Cleanup", "Cinematic Animation", "Motion Editing", "Gameplay Animation", "Facial Animation"];
+    const words = ["Rigging Setup", "Motion Capture Cleanup", "Cinematic Animation", "Motion Editing","Character Setup", "Gameplay Animation", "Facial Animation"];
     const wordEl = document.querySelector(".animated-word");
     let i = 0;
 
