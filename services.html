@@ -1868,12 +1868,17 @@
 
   <style>
 /* ===== Logo Carousel Styles ===== */
+
+html body {
+  background-color: #000000;
+}
+
+
 .logo-carousel-wrapper {
   overflow: hidden;
   position: relative;
   width: 100%;
   max-width: 100vw;
-  background-color: #0a0a0a00;
 }
 
 .logo-track {
@@ -1939,6 +1944,26 @@
           <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-2.avif" alt="Logo 2"></div>
           <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-3.avif" alt="Logo 3"></div>
           <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-4.avif" alt="Logo 4"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-1.avif" alt="Logo 1"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-2.avif" alt="Logo 2"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-3.avif" alt="Logo 3"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-4.avif" alt="Logo 4"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-1.avif" alt="Logo 1"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-2.avif" alt="Logo 2"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-3.avif" alt="Logo 3"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-4.avif" alt="Logo 4"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-1.avif" alt="Logo 1"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-2.avif" alt="Logo 2"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-3.avif" alt="Logo 3"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-4.avif" alt="Logo 4"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-1.avif" alt="Logo 1"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-2.avif" alt="Logo 2"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-3.avif" alt="Logo 3"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-4.avif" alt="Logo 4"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-1.avif" alt="Logo 1"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-2.avif" alt="Logo 2"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-3.avif" alt="Logo 3"></div>
+          <div loading="lazy" class="logo-item"><img src="assets/img/home-1/brand/b-4.avif" alt="Logo 4"></div>
         </div>
       </div>
     </div>
@@ -1948,10 +1973,13 @@
 
 <!-- JavaScript to Clone Logos test -->
 <script>
-  const track = document.getElementById('logoTrack');
-  const logos = track.innerHTML;
-  track.innerHTML += logos; // Duplicate once for seamless scroll
+  document.addEventListener("DOMContentLoaded", function () {
+    const track = document.getElementById('logoTrack');
+    const logos = track.innerHTML;
+    track.innerHTML += logos; // Duplicate logos
+  });
 </script>
+
 
 
 <section class="gaming-hero-section">

@@ -6924,6 +6924,7 @@ span {
 
 .gt-marque-section {
   position: relative;
+
 }
 .gt-marque-section .overlay-shape {
   position: absolute;
@@ -6932,10 +6933,13 @@ span {
   top: 0;
   bottom: 0;
   z-index: 9;
+
 }
 .gt-marque-section .overlay-shape img {
   width: 100%;
   height: 100%;
+  
+  
 }
 
 .gt-trending-match-items {
@@ -6944,7 +6948,7 @@ span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1C1D20;
+  background: #000000;
 }
 @media (max-width: 1399px) {
   .gt-trending-match-items {
