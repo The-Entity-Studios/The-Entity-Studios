@@ -532,31 +532,6 @@
        </section>
 
 
-       
-
-
-
-  <!-- Script to auto-hide See More after expand -->
-  <script>
-    const seeMoreLinks = document.querySelectorAll('.see-more');
-
-    seeMoreLinks.forEach(link => {
-      const targetId = link.getAttribute('href').replace('#', '');
-      const targetCollapse = document.getElementById(targetId);
-
-      targetCollapse.addEventListener('show.bs.collapse', () => {
-        link.style.display = 'none';
-        link.setAttribute('aria-expanded', 'true');
-      });
-
-      targetCollapse.addEventListener('hide.bs.collapse', () => {
-        link.style.display = 'inline-block';
-        link.setAttribute('aria-expanded', 'false');
-      });
-    });
-  </script>
-
-
 
 
 <!-- GT Operating principles Section one  mobile Start -->
@@ -983,7 +958,146 @@
         transform: translateX(-50%);
       }
     }
+
+
+
+    
   </style>
+
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <style>
+    body {
+      background: #111;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+
+    .swiper {
+      width: 100%;
+      padding-top: 60px;
+      padding-bottom: 80px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 450px;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .swiper-slide:not(.swiper-slide-active) {
+      filter: brightness(0.5) blur(1px);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #fff;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+      padding: 12px;
+      width: 44px;
+      height: 44px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .swiper-pagination-bullet {
+      background: white;
+      opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+  </style>
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">
+      <img src="https://via.placeholder.com/300x450/222/fff?text=Game+1" alt="Slide 1" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://via.placeholder.com/300x450/333/fff?text=Game+2" alt="Slide 2" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://via.placeholder.com/300x450/444/fff?text=Game+3" alt="Slide 3" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://via.placeholder.com/300x450/555/fff?text=Game+4" alt="Slide 4" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://via.placeholder.com/300x450/666/fff?text=Game+5" alt="Slide 5" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://via.placeholder.com/300x450/777/fff?text=Game+6" alt="Slide 6" />
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- Pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+const swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  loop: true,
+  slidesPerView: "auto",
+  initialSlide: 0, // 👈 forces start at the first actual slide
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 200,
+    modifier: 1,
+    slideShadows: false,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+});
+</script>
+
+
+
+
 
 <!-- GT Commitment Section Start -->
 <section class="gt-game-section section-padding fix">
