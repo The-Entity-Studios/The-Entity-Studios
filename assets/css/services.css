@@ -52,6 +52,7 @@
     .accordion-body {
       padding: 1rem;
       background: #1f1f1f;
+      text-transform: none;
     }
 
     .accordion-body ul {
@@ -132,11 +133,7 @@
     font-weight: bold;
     color: #fff;
     z-index: 3;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    max-width: 90%;
-    transition: all 0.5s ease;
+    background: transparent
   }
 
 
@@ -154,6 +151,7 @@
     .accordion-body-mob li {
       padding: 0.4rem 0;
       color: #fff;
+      text-transform: none;
     }
 
     .accordion-body-mob li::before {
@@ -229,11 +227,8 @@
   z-index: 2;
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 0.75rem 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  color: #fff;
-  display: inline-block;
+  padding: 0 1rem;
+  background: transparent
 }
 
   .accordion-title-mob span {
@@ -246,9 +241,7 @@
   left: 1rem;
   right: 1rem;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 1rem;
-  border-radius: 12px;
+  background: transparent
 }
   .accordion-body-mob ul {
     padding-left: 1.2rem;
