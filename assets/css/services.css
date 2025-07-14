@@ -99,16 +99,38 @@
 
     .accordion-wrapper-mob { padding: 1rem; }
 
-    .accordion-card-mob {
-      border-radius: 10px;
-      overflow: hidden;
-      background: #1a1a1a;
-      transition: height 0.5s ease;
-      margin-bottom: 1rem;
-      position: relative;
-      height: 200px; /* initial collapsed height */
-      gap: 40px;
-    }
+.accordion-card-mob {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1a1a1a;
+  transition: height 0.5s ease;
+  margin-bottom: 1rem;
+  height: 200px; /* initial collapsed height */
+  gap: 40px;
+  z-index: 1;
+}
+
+/* Outline effect */
+.accordion-card-mob::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 2px; /* outline thickness */
+  background: linear-gradient(0deg, black, red);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
 
     .accordion-card-mob.open-mob .accordion-title-mob {
       position: relative;
@@ -266,6 +288,7 @@
     transition: filter 0.4s ease;
   }
 
+
   .swiper-button-next,
   .swiper-button-prev {
     color: #ffffff2c;
@@ -274,9 +297,9 @@
     padding: 12px;
     width: 64px;
     height: 64px;
-    top: 50%;
+    top: 96%;
     transform: translateY(-50%);
-    z-index: 10;
+    z-index: 100;
   }
 
   .swiper-button-next:hover,
