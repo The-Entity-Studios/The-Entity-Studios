@@ -457,57 +457,27 @@
 
 
 <style>
-  .responsive-hero {
-    position: relative;
-    min-height: 30vh;
-    background-image: url('assets/img/home-1/hero/company_bg.avif'); /* fallback image path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-  }
-
-  @media (min-width: 768px) {
     .responsive-hero {
-      min-height: 85vh;
-    }
-  }
+  background-image: url('assets/img/home-1/hero/company-bg.avif'); /* Adjust if needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 30vh; /* Mobile default */
+}
 
-  .responsive-hero video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    display: block;
+/* For tablets and up (768px+) */
+@media (min-width: 768px) {
+  .responsive-hero {
+    min-height: 85vh;
   }
+}
 
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
 </style>
 
         <div id="smooth-wrapper">
             <div id="smooth-content">
-<div class="hero-section hero-1 responsive-hero">
-  <video autoplay muted loop playsinline>
-    <source src="assets/img/home-1/hero/Logo_AI.mp4" type="video/mp4">
-    <!-- The background image will be used if video fails -->
-  </video>
-  <div class="hero-content">
-  </div>
-</div>
+<section class="hero-section hero-1 responsive-hero"></section>
+
 
 
 

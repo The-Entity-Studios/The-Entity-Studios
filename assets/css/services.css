@@ -581,9 +581,9 @@
 
 .vertical-text2 {
   position: absolute;
-  top: 55%;
+  top: 64%;
   right: -180px;  /* Push completely outside container */
-  transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(0%) rotate(-90deg);
   transform-origin: left top;
   font-size: 3rem;
   font-weight: 900;
