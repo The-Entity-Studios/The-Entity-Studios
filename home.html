@@ -456,7 +456,24 @@
     </div>
 </header>
 
+<style>
+.glow-loop {
+  filter: brightness(1) contrast(1) saturate(1.5);
+  animation: glowColor 2s infinite ease-in-out;
+    mix-blend-mode: color-dodge;
+}
 
+@keyframes glowColor {
+  0%, 100% {
+    filter: brightness(1) contrast(1) saturate(1.5);
+  }
+  50% {
+    filter: brightness(1.5) contrast(1.2) saturate(2) drop-shadow(0 0 2px rgb(255, 155, 155));
+  }
+}
+
+
+</style>
 
 <main>
         <div id="smooth-wrapper">
@@ -468,6 +485,7 @@
       <div class="col-lg-4 col-md-6 mb-4 mb-md-0 d-flex justify-content-center justify-content-lg-start">
         <div class="hero-image wow animated-image text-center w-100">
           <img loading="lazy" src="assets/img/home-1/hero/hammer.avif" alt="overlay" class="overlay-img img-fluid" style="max-width: 100%; height: auto;">
+          <img loading="lazy" src="assets/img/home-1/hero/hammer (1light).png" alt="overlay" class="glow-loop overlay-img img-fluid" style="max-width: 100%; height: auto;">
         </div>
       </div>
 
@@ -1056,9 +1074,11 @@
 
     <!-- Left Rotated Image -->
     <img src="assets/img/hammer.png" alt="Left Image" class="side-image left-image hide-on-small">
+    <img src="assets/img/hammerlight.png" alt="Left Image" class="glow-loop side-image left-image hide-on-small">
 
     <!-- Right Image -->
     <img src="assets/img/home-1/testimonial/shape.png" alt="Right Image" class="side-image right-image hide-on-small">
+    <img src="assets/img/home-1/testimonial/shapel.png" alt="Right Image" class="glow-loop side-image right-image hide-on-small">
 
   </div>
 </section>

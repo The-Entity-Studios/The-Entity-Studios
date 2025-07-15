@@ -446,182 +446,441 @@
         <div id="smooth-wrapper">
             <div id="smooth-content">
 
-<!-- Custom Styles -->
-  <style>
-    h2 {
-      text-transform: none;
-      font-size: clamp(1.75rem, 4vw, 2.5rem); /* Responsive heading */
-    }
+<!-- Terms and Conditions CSS applied to Privacy Policy -->
+<style>
+  h2 {
+    text-transform: none;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+  }
 
-    li {
-      text-transform: none;
-    }
+  li {
+    text-transform: none;
+  }
 
-    /* Section spacing and background */
-    .terms-section {
-      padding-top: 80px;
-      padding-bottom: 60px;
-      background-color: #f8f9fa00;
-    }
+  /* Section spacing and background */
+  .terms-section {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background-color: #f8f9fa00;
+  }
 
-    /* Headings */
-    .terms-section h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
+  /* Headings */
+  .terms-section h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
 
+  .terms-section h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  /* Paragraph and list styles */
+  .terms-section p,
+  .terms-section ul,
+  .terms-section li {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .terms-section ul {
+    padding-left: 1.2rem;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .terms-section h1,
     .terms-section h2 {
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
+      text-align: center;
     }
 
-    /* Paragraph and list styles */
     .terms-section p,
     .terms-section ul,
     .terms-section li {
-      font-size: 1rem;
-      line-height: 1.7;
-      margin-bottom: 1rem;
+      padding-left: 0;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .terms-section p,
+    .terms-section ul,
+    .terms-section li {
+      padding-left: 60px;
+      text-align: left;
+    }
+  }
+</style>
+
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+<style>
+    body {
+        background-color: #121212;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
     }
 
-    .terms-section ul {
-      padding-left: 1.2rem;
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .terms-section h1,
-      .terms-section h2 {
+    .legal-section {
+        background-color: #1a1a1a;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .legal-box {
+        background-color: #262626;
+        padding: 35px;
+        border-radius: 15px;
+        margin-bottom: 35px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .legal-box h2 {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        color: #e74c3c; /* Bright red */
+        border-bottom: 3px solid #ff1900;
+        padding-bottom: 12px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .legal-box h2 i {
+        margin-right: 15px;
+        font-size: 1.8rem;
+    }
+
+    .legal-box h3 {
+        font-size: 1.4rem;
+        color: #008cff; /* Bright red */
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .legal-box p,
+    .legal-box ul {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .legal-box ul {
+        padding-left: 30px;
+    }
+
+    .legal-box a {
+        color: #187700; /* Bright red */
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .legal-box a:hover {
+        color: #00a2ff; /* Darker red on hover */
+    }
+
+    .table th,
+    .table td {
+        vertical-align: middle;
         text-align: center;
-      }
-
-      .terms-section p,
-      .terms-section ul,
-      .terms-section li {
-        padding-left: 0;
-      }
     }
 
-    @media (min-width: 769px) {
-      .terms-section p,
-      .terms-section ul,
-      .terms-section li {
-        padding-left: 60px;
-        text-align: left;
-      }
+    .table-dark {
+        background-color: #1a1a1a;
     }
-  </style>
-</head>
-<body>
 
-<section class="terms-section">
-  <div class="container">
+    .table-dark th,
+    .table-dark td {
+        border-color: #444;
+    }
+
+    .alert-warning {
+        background-color: #333;
+        color: #ff9800;
+        padding: 25px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        font-weight: normal;
+    }
+
+    .footer {
+        background-color: #1c1c1c;
+        padding: 25px 0;
+        text-align: center;
+        color: #999;
+    }
+
+    .footer a {
+        color: #ff1900; /* Bright red */
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        color: #ff1900; /* Darker red on hover */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .legal-box {
+            padding: 20px;
+        }
+
+        .footer {
+            padding: 15px 0;
+        }
+
+        .container {
+            padding: 15px;
+        }
+
+        .legal-box h2 {
+            font-size: 1.8rem;
+        }
+
+        .legal-box h3 {
+            font-size: 1.2rem;
+        }
+
+        .legal-box p,
+        .legal-box ul {
+            font-size: 1rem;
+        }
+    }
+
+    .highlight {
+        color: #ff1900; /* Bright red */
+        font-weight: bold;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        color: #ff1900; /* Bright red */
+        font-weight: bold;
+        margin-top: 30px;
+        text-transform: uppercase;
+    }
+
+    .contact-email {
+        color: #ff1900; /* Bright red */
+        font-weight: bold;
+    }
+
+    .contact-email:hover {
+        color: #ff1900; /* Darker red on hover */
+    }
+
+    .icon {
+        font-size: 1.8rem;
+        margin-right: 15px;
+    }
+
+    .box-border {
+        border: 1px solid #e74c3c; /* Bright red */
+        padding: 25px;
+        margin-top: 15px;
+        border-radius: 12px;
+        background-color: #333;
+    }
+
+    .box-border ul {
+        padding-left: 20px;
+    }
+
+    .box-border li {
+        margin-bottom: 12px;
+    }
+
+    /* Hover Effects for Headings */
+    .legal-box h2:hover {
+        color: #ff1900; /* Darker red */
+        border-color: #ff1900;
+    }
+
+    .section-title:hover {
+        color: #ff1900; /* Darker red */
+    }
+
+    /* Red Theme for Registered Legal Entities Section */
+    .company-section {
+        margin-top: 20px;
+    }
+
+    .company-box {
+        background-color: #202020;
+        border-radius: 10px;
+        margin: 15px 0;
+        padding: 15px;
+        color: white;
+    }
+
+    .company-box a {
+        color: #00aeff; /* Bright red */
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+
+    .company-box a:hover {
+        color: #0011ff; /* Darker red */
+        text-decoration: underline;
+    }
+
+    .glow-text {
+      color: transparent;
+      background: linear-gradient(90deg, #00bfff, #00ff99);
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: fadeGlow 1.5s infinite;
+    }
+
+    @keyframes fadeGlow {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+</style>
+
+<section class="legal-section">
+  <div class="container py-5">
     <div class="row justify-content-center">
-      <div class="col-lg-10 col-md-12 col-sm-12">
-        <h1 class="mb-3 mt-5 pt-5">Terms and Conditions</h1>
-        <p class="text">Last Updated: 14-June-2025</p>
+      <div class="col-xl-10 col-lg-11 col-md-12">
 
-        <p>
-          Welcome to <strong>The Entity Studios.</strong> (registered as The Entity OÜ in the EU, The-Entity Ltd. in the UK, and The Entity Studios Pvt. Ltd. in India). 
-          These Terms and Conditions govern your use of our website and services. By accessing or using our website, you agree to be bound by these terms.
-        </p>
+        <!-- Title Box -->
+        <div class="legal-box text-center">
+          <h1 class="fw-bold mb-3">Terms and Conditions</h1>
+          <p class="text-secondary">Last Updated: <span class="highlight">14 June 2025</span></p>
+        </div>
 
-        <h2>1. Definitions</h2>
-        <ul>
-          <li>"The Entity Studios" refers to the legal entities The Entity OÜ (EU), The-Entity Ltd. (UK), and The Entity Studios Ltd. (India).</li>
-          <li>"Website" refers to <code>the-entity.studio</code>, <code>the-entity.ltd</code>, <code>entity.ltd</code> and any subdomains.</li>
-          <li>"User," "You," or "Your" refers to any individual or entity accessing our website or services.</li>
-          <li>"Services" refer to all offerings by The Entity Studios, including animation, rigging, motion capture, and other game development-related services.</li>
-        </ul>
+        <!-- Section 1 -->
+        <div class="legal-box">
+          <h2><i class="fas fa-info-circle text-warning icon"></i>1. Definitions</h2>
+          <ul>
+            <li>"The Entity Studios" refers to the legal entities The Entity OÜ (EU), The-Entity Ltd. (UK), and The Entity Studios Ltd. (India).</li>
+            <li>"Website" refers to <code>the-entity.studio</code>, <code>the-entity.ltd</code>, <code>entity.ltd</code> and any subdomains.</li>
+            <li>"User," "You," or "Your" refers to any individual or entity accessing our website or services.</li>
+            <li>"Services" refer to all offerings by The Entity Studios, including animation, rigging, motion capture, and other game development-related services.</li>
+          </ul>
+        </div>
 
-        <h2>2. Use of Website and Services</h2>
-        <ul>
-          <li>You agree to use our website only for lawful purposes and in compliance with all applicable regulations.</li>
-          <li>Unauthorized use of our website, including attempts to gain unauthorized access to our systems, is strictly prohibited.</li>
-        </ul>
+        <div class="legal-box">
+          <h2><i class="fas fa-globe text-primary icon"></i>2. Use of Website and Services</h2>
+          <ul>
+            <li>You agree to use our website only for lawful purposes and in compliance with all applicable regulations.</li>
+            <li>Unauthorized use of our website, including attempts to gain unauthorized access to our systems, is strictly prohibited.</li>
+          </ul>
+        </div>
 
-        <h2>3. Intellectual Property Rights</h2>
-        <ul>
-          <li>All content, including text, graphics, logos, and media on this website, is the property of The Entity Ltd unless otherwise stated.</li>
-          <li>You may not copy, distribute, or modify our content without prior written consent.</li>
-        </ul>
+        <div class="legal-box">
+          <h2><i class="fas fa-copyright text-danger icon"></i>3. Intellectual Property Rights</h2>
+          <ul>
+            <li>All content, including text, graphics, logos, and media on this website, is the property of The Entity Ltd unless otherwise stated.</li>
+            <li>You may not copy, distribute, or modify our content without prior written consent.</li>
+          </ul>
+        </div>
 
-        <h2>4. Industry Experience & Project References</h2>
-        <p>Our team has contributed to various projects while working at respective companies. All trademarks, copyrights, and intellectual property rights for the following projects remain with their respective companies:</p>
-        <ul>
-          <li>Providence – All rights reserved by Dynasty Studios.</li>
-          <li>Flintlock: The Siege of Dawn – All rights reserved by A44 Games.</li>
-          <li>Dying Light 2 Stay Human – All rights reserved by Techland.</li>
-          <li>Ghost Recon Breakpoint – All rights reserved by Ubisoft.</li>
-          <li>Red Dead Redemption – All rights reserved by Rockstar Games.</li>
-          <li>GTA V – All rights reserved by Rockstar Games.</li>
-          <li>The Prodigies – All rights reserved by Warner Bros.</li>
-          <li>Slimecore – All rights reserved by Genpop Interactive.</li>
-          <li>Horse Riding Tales – All rights reserved by Foxie Games.</li>
-        </ul>
-        <p>The mention of these projects does not imply any ongoing partnership or affiliation with the respective companies. 
-        The Entity Studios acknowledges that all rights and ownership belong to their respective copyright holders.</p>
+        <div class="legal-box">
+          <h2><i class="fas fa-briefcase text-info icon"></i>4. Industry Experience & Project References</h2>
+          <p>Our team has contributed to various projects while working at respective companies. All trademarks, copyrights, and intellectual property rights for the following projects remain with their respective companies:</p>
+          <ul>
+            <li>Providence – All rights reserved by Dynasty Studios.</li>
+            <li>Flintlock: The Siege of Dawn – All rights reserved by A44 Games.</li>
+            <li>Dying Light 2 Stay Human – All rights reserved by Techland.</li>
+            <li>Ghost Recon Breakpoint – All rights reserved by Ubisoft.</li>
+            <li>Red Dead Redemption – All rights reserved by Rockstar Games.</li>
+            <li>GTA V – All rights reserved by Rockstar Games.</li>
+            <li>The Prodigies – All rights reserved by Warner Bros.</li>
+            <li>Slimecore – All rights reserved by Genpop Interactive.</li>
+            <li>Horse Riding Tales – All rights reserved by Foxie Games.</li>
+          </ul>
+          <p>The mention of these projects does not imply any ongoing partnership or affiliation with the respective companies. The Entity Studios acknowledges that all rights and ownership belong to their respective copyright holders.</p>
+        </div>
 
-        <h2>5. Service Engagement and Contracts</h2>
-        <ul>
-          <li>Any engagement of our services is subject to a formal contract agreement, which will outline scope, payment terms, deliverables, and timelines.</li>
-          <li>The Entity Studios reserves the right to refuse service to any individual or entity at its discretion.</li>
-        </ul>
+        <div class="legal-box">
+          <h2><i class="fas fa-handshake text-success icon"></i>5. Service Engagement and Contracts</h2>
+          <ul>
+            <li>Any engagement of our services is subject to a formal contract agreement, which will outline scope, payment terms, deliverables, and timelines.</li>
+            <li>The Entity Studios reserves the right to refuse service to any individual or entity at its discretion.</li>
+          </ul>
+        </div>
 
-        <h2>6. Payment and Billing</h2>
-        <ul>
-          <li>Payment terms will be defined in individual contracts.</li>
-          <li>Late payments may result in service suspension or termination.</li>
-        </ul>
+        <div class="legal-box">
+          <h2><i class="fas fa-credit-card text-warning icon"></i>6. Payment and Billing</h2>
+          <ul>
+            <li>Payment terms will be defined in individual contracts.</li>
+            <li>Late payments may result in service suspension or termination.</li>
+          </ul>
+        </div>
 
-        <h2>7. Data Protection and Privacy</h2>
-        <ul>
-          <li>We comply with GDPR, the UK Data Protection Act, and Indian data privacy laws.</li>
-          <li>Our Privacy Policy outlines how we collect, use, and protect your data.</li>
-        </ul>
+        <div class="legal-box">
+          <h2><i class="fas fa-lock text-danger icon"></i>7. Data Protection and Privacy</h2>
+          <ul>
+            <li>We comply with GDPR, the UK Data Protection Act, and Indian data privacy laws.</li>
+            <li>Our Privacy Policy outlines how we collect, use, and protect your data.</li>
+          </ul>
+        </div>
 
-        <h2>8. Limitation of Liability</h2>
-        <ul>
-          <li>The Entity Studios shall not be liable for any indirect, incidental, or consequential damages arising out of or related to the use of our services</li>
-          <li>We do not guarantee uninterrupted or error-free access to our website.</li>
-        </ul>
+        <div class="legal-box">
+          <h2><i class="fas fa-exclamation-triangle text-secondary icon"></i>8. Limitation of Liability</h2>
+          <ul>
+            <li>The Entity Studios shall not be liable for any indirect, incidental, or consequential damages arising out of or related to the use of our services.</li>
+            <li>We do not guarantee uninterrupted or error-free access to our website.</li>
+          </ul>
+        </div>
 
-        <h2>9. Termination of Access</h2>
-        <ul>
-          <li>The Entity Studios reserves the right to terminate or restrict access to our website and services if we suspect misuse or breach of these Terms.</li>
-        </ul>
+        <div class="legal-box">
+          <h2><i class="fas fa-ban text-danger icon"></i>9. Termination of Access</h2>
+          <ul>
+            <li>The Entity Studios reserves the right to terminate or restrict access to our website and services if we suspect misuse or breach of these Terms.</li>
+          </ul>
+        </div>
 
-        <h2>10. Changes to Terms and Conditions</h2>
-        <ul>
-          <li>We may update these Terms periodically. The latest version will always be available on our website.</li>
-        </ul>
+        <div class="legal-box">
+          <h2><i class="fas fa-sync-alt text-info icon"></i>10. Changes to Terms and Conditions</h2>
+          <ul>
+            <li>We may update these Terms periodically. The latest version will always be available on our website.</li>
+          </ul>
+        </div>
 
-        <h2>11. Governing Law and Jurisdiction</h2>
-        <ul>
-          <li>These Terms shall be governed by and construed in accordance with the applicable laws of India, the United Kingdom, and Estonia, depending on the jurisdiction in which the relevant services or contractual obligations are rendered.</li>
-          <li>Any disputes arising out of or in connection with these Terms shall, subject to the nature of engagement, be subject to the exclusive jurisdiction of the competent courts in Bengaluru (India), Tallinn (Estonia), or London (United Kingdom).</li>
-        </ul>
+        <div class="legal-box">
+          <h2><i class="fas fa-balance-scale text-success icon"></i>11. Governing Law and Jurisdiction</h2>
+          <ul>
+            <li>These Terms shall be governed by and construed in accordance with the applicable laws of India, the United Kingdom, and Estonia, depending on the jurisdiction in which the relevant services or contractual obligations are rendered.</li>
+            <li>Any disputes arising out of or in connection with these Terms shall, subject to the nature of engagement, be subject to the exclusive jurisdiction of the competent courts in Bengaluru (India), Tallinn (Estonia), or London (United Kingdom).</li>
+          </ul>
+        </div>
 
-        <h2>12. Contact Information</h2>
-        <p>If you have any questions regarding these Terms, please contact us:</p>
-        <p><strong>The Entity Studios</strong> (Registered as The Entity OÜ in the EU, The-Entity Ltd. in the UK, and The Entity Studios Pvt. Ltd. in India)</p>
-        <p>Email: <a href="mailto:contact@entity.ltd">contact@entity.ltd</a></p>
+        <div class="legal-box">
+          <h2><i class="fas fa-envelope text-warning icon"></i>12. Contact Information</h2>
+          <p>If you have any questions regarding these Terms, please contact us:</p>
+          <p><strong>The Entity Studios</strong> (Registered as The Entity OÜ in the EU, The-Entity Ltd. in the UK, and The Entity Studios Pvt. Ltd. in India)</p>
+          <p>Email: <a href="mailto:contact@entity.ltd" class="contact-email">contact@entity.ltd</a></p>
+        </div>
 
-        <h2>13. Additional Clauses</h2>
-        <ul>
-          <li>Service Availability: While we aim to provide uninterrupted access to our services, we do not guarantee constant availability and may suspend services for maintenance or upgrades.</li>
-          <li>Compliance Resources: For full details of our compliance and governance framework, please visit our <a href="https://trust.the-entity.studio/" target="_blank" style="color: red;">Trust Portal</a>.</li>
-        </ul>
+        <div class="legal-box">
+          <h2><i class="fas fa-plus-circle text-info icon"></i>13. Additional Clauses</h2>
+          <ul>
+            <li>Service Availability: While we aim to provide uninterrupted access to our services, we do not guarantee constant availability and may suspend services for maintenance or upgrades.</li>
+            <li>Compliance Resources: For full details of our compliance and governance framework, please visit our 
+              <a href="https://trust.the-entity.studio/" target="_blank" class="glow-text">Trust Portal</a>.</li>
+          </ul>
+          <p class="mt-4 mb-4">By using our website or services, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.</p>
+        </div>
 
-        <p class="mt-4 mb-4">By using our website or services, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.</p>
       </div>
     </div>
   </div>
 </section>
-
 
 
     <!-- Bootstrap JS Bundle -->

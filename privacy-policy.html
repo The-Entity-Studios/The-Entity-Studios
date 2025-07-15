@@ -517,96 +517,354 @@
   }
 </style>
 
-<section class="terms-section">
-  <div class="container">
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+<style>
+    body {
+        background-color: #121212;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .legal-section {
+        background-color: #1a1a1a;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .legal-box {
+        background-color: #262626;
+        padding: 35px;
+        border-radius: 15px;
+        margin-bottom: 35px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .legal-box h2 {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        color: #e74c3c; /* Bright red */
+        border-bottom: 3px solid #ff1900;
+        padding-bottom: 12px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .legal-box h2 i {
+        margin-right: 15px;
+        font-size: 1.8rem;
+    }
+
+    .legal-box h3 {
+        font-size: 1.4rem;
+        color: #008cff; /* Bright red */
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .legal-box p,
+    .legal-box ul {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .legal-box ul {
+        padding-left: 30px;
+    }
+
+    .legal-box a {
+        color: #187700; /* Bright red */
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .legal-box a:hover {
+        color: #00a2ff; /* Darker red on hover */
+    }
+
+    .table th,
+    .table td {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .table-dark {
+        background-color: #1a1a1a;
+    }
+
+    .table-dark th,
+    .table-dark td {
+        border-color: #444;
+    }
+
+    .alert-warning {
+        background-color: #333;
+        color: #ff9800;
+        padding: 25px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        font-weight: normal;
+    }
+
+    .footer {
+        background-color: #1c1c1c;
+        padding: 25px 0;
+        text-align: center;
+        color: #999;
+    }
+
+    .footer a {
+        color: #ff1900; /* Bright red */
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        color: #ff1900; /* Darker red on hover */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .legal-box {
+            padding: 20px;
+        }
+
+        .footer {
+            padding: 15px 0;
+        }
+
+        .container {
+            padding: 15px;
+        }
+
+        .legal-box h2 {
+            font-size: 1.8rem;
+        }
+
+        .legal-box h3 {
+            font-size: 1.2rem;
+        }
+
+        .legal-box p,
+        .legal-box ul {
+            font-size: 1rem;
+        }
+    }
+
+    .highlight {
+        color: #ff1900; /* Bright red */
+        font-weight: bold;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        color: #ff1900; /* Bright red */
+        font-weight: bold;
+        margin-top: 30px;
+        text-transform: uppercase;
+    }
+
+    .contact-email {
+        color: #ff1900; /* Bright red */
+        font-weight: bold;
+    }
+
+    .contact-email:hover {
+        color: #ff1900; /* Darker red on hover */
+    }
+
+    .icon {
+        font-size: 1.8rem;
+        margin-right: 15px;
+    }
+
+    .box-border {
+        border: 1px solid #e74c3c; /* Bright red */
+        padding: 25px;
+        margin-top: 15px;
+        border-radius: 12px;
+        background-color: #333;
+    }
+
+    .box-border ul {
+        padding-left: 20px;
+    }
+
+    .box-border li {
+        margin-bottom: 12px;
+    }
+
+    /* Hover Effects for Headings */
+    .legal-box h2:hover {
+        color: #ff1900; /* Darker red */
+        border-color: #ff1900;
+    }
+
+    .section-title:hover {
+        color: #ff1900; /* Darker red */
+    }
+
+    /* Red Theme for Registered Legal Entities Section */
+    .company-section {
+        margin-top: 20px;
+    }
+
+    .company-box {
+        background-color: #202020;
+        border-radius: 10px;
+        margin: 15px 0;
+        padding: 15px;
+        color: white;
+    }
+
+    .company-box a {
+        color: #00aeff; /* Bright red */
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+
+    .company-box a:hover {
+        color: #0011ff; /* Darker red */
+        text-decoration: underline;
+    }
+
+    .glow-text {
+      color: transparent;
+      background: linear-gradient(90deg, #00bfff, #00ff99);
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: fadeGlow 1.5s infinite;
+    }
+
+    @keyframes fadeGlow {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+</style>
+
+
+<section class="legal-section">
+  <div class="container py-5">
     <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <h1 class="mb-3 mt-5 pt-5">Privacy Policy</h1>
-        <p class="text">Last Updated: June 14, 2025</p>
+      <div class="col-xl-10 col-lg-11 col-md-12">
 
-        <p>
-          This Privacy Policy applies to The Entity Studios Private Limited (India), The-Entity Ltd (UK), and The Entity OÜ (Estonia) 
-          (hereinafter referred to as <strong>“The Entity Studios”</strong>). We are committed to protecting your privacy and ensuring 
-          compliance with applicable data protection laws, including the General Data Protection Regulation (GDPR), the UK Data Protection Act, 
-          and applicable Indian privacy regulations.
+        <!-- Title Box -->
+        <div class="legal-box text-center">
+          <h1 class="fw-bold mb-3">Privacy Policy</h1>
+          <p class="text-secondary">Last Updated: <span class="highlight">June 14, 2025</span></p>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="legal-box">
+          <h2><i class="fas fa-user-shield text-warning icon"></i>1. Information We Collect</h2>
+          <ul>
+            <li><strong>Personal Information:</strong> Name, email, phone number, and other contact details submitted via forms or email.</li>
+            <li><strong>Technical Data:</strong> IP address, browser type, device data, and general analytics.</li>
+            <li><strong>Cookies & Tracking:</strong> Anonymous information gathered using Google Analytics (see our Cookie Policy).</li>
+          </ul>
+        </div>
+
+        <div class="legal-box">
+          <h2><i class="fas fa-cogs text-info icon"></i>2. How We Use Your Information</h2>
+          <ul>
+            <li>To communicate with you regarding services or inquiries</li>
+            <li>To analyze and improve our website experience</li>
+            <li>To comply with legal obligations</li>
+            <li>We do not sell, rent, or profile your personal data.</li>
+          </ul>
+        </div>
+
+        <div class="legal-box">
+          <h2><i class="fas fa-balance-scale-left text-danger icon"></i>3. Legal Basis for Processing</h2>
+          <p>We process personal data based on the following legal bases:</p>
+          <ul>
+            <li>Consent (where applicable, such as marketing cookies)</li>
+            <li>Legitimate interests (e.g., service improvement and analytics)</li>
+            <li>Legal obligation</li>
+            <li>Contractual necessity</li>
+          </ul>
+        </div>
+
+        <div class="legal-box">
+          <h2><i class="fas fa-share-alt text-secondary icon"></i>4. Data Sharing & Third Parties</h2>
+          <p>We do not share your data with third parties, except:</p>
+          <ul>
+            <li>With trusted service providers for hosting and analytics (e.g., Google Analytics)</li>
+            <li>With legal authorities if required by law</li>
+          </ul>
+          <p>All providers we work with are bound by appropriate data protection agreements.</p>
+        </div>
+
+        <div class="legal-box">
+          <h2><i class="fas fa-lock text-success icon"></i>5. Data Security</h2>
+          <p>We take data security seriously and follow:</p>
+          <ul>
+            <li>ISO/IEC 27001:2022 certified ISMS practices</li>
+            <li>TPN Gold-aligned security controls</li>
+          </ul>
+          <p>We implement industry-standard security measures, including:</p>
+          <ul>
+            <li>Data encryption</li>
+            <li>Access restrictions</li>
+            <li>Regular security audits</li>
+          </ul>
+        </div>
+
+        <div class="legal-box">
+          <h2><i class="fas fa-clock text-warning icon"></i>6. Data Retention</h2>
+          <p>We follow defined data retention timelines per our internal Data Retention Policy and securely dispose of data when no longer required.</p>
+        </div>
+
+        <div class="legal-box">
+          <h2><i class="fas fa-user-check text-primary icon"></i>7. Your Rights</h2>
+          <p>Depending on your location, you may have the following rights:</p>
+          <ul>
+            <li><strong>Access:</strong> Request access to your personal data.</li>
+            <li><strong>Correction:</strong> Request corrections to inaccurate data.</li>
+            <li><strong>Deletion:</strong> Request deletion of your personal data.</li>
+            <li><strong>Objection & Restriction:</strong> Object to or restrict certain data processing activities.</li>
+            <li><strong>Data Portability:</strong> Request a copy of your data in a portable format.</li>
+          </ul>
+          <p>
+            To exercise these rights, please contact us at 
+            <a href="mailto:legal@entity.ltd" class="contact-email">legal@entity.ltd</a> or via our secure 
+            <a href="https://trust.the-entity.studio/" target="_blank" class="glow-text">Trust Portal</a> (available to partners under NDA).
+          </p>
+        </div>
+
+        <div class="legal-box">
+          <h2><i class="fas fa-globe-europe text-danger icon"></i>8. International Data Transfers</h2>
+          <p>We operate across the UK, EU, and India. Data transfers between these regions are safeguarded under GDPR 
+          and applicable regional laws.</p>
+        </div>
+
+        <div class="legal-box">
+          <h2><i class="fas fa-sync-alt text-info icon"></i>9. Changes to This Policy</h2>
+          <p>We may update this policy as needed. The latest version will always be available on our website.</p>
+        </div>
+
+        <div class="legal-box">
+          <h2><i class="fas fa-envelope text-warning icon"></i>10. Contact Us</h2>
+          <p>For privacy concerns, you can reach us at:</p>
+          <p><strong>The Entity Studios</strong> (UK, EU, and India)</p>
+          <p>Email: <a href="mailto:legal@entity.ltd" class="contact-email">legal@entity.ltd</a></p>
+        </div>
+
+        <p class="mt-4 mb-4 text-secondary text-center">
+          By using our services, you acknowledge and agree to this Privacy Policy.
         </p>
 
-        <h2>1. Information We Collect</h2>
-        <ul>
-          <li>Personal Information: Name, email, phone number, and other contact details submitted via forms or email.</li>
-          <li>Technical Data: IP address, browser type, device data, and general analytics.</li>
-          <li>Cookies & Tracking: Anonymous information gathered using Google Analytics (see our Cookie Policy).</li>
-        </ul>
-
-        <h2>2. How We Use Your Information</h2>
-        <ul>
-          <li>To communicate with you regarding services or inquiries</li>
-          <li>To analyze and improve our website experience</li>
-          <li>To comply with legal obligations</li>
-          <li>We do not sell, rent, or profile your personal data.</li>
-        </ul>
-
-        <h2>3. Legal Basis for Processing</h2>
-        <p>We process personal data based on the following legal bases:</p>
-        <ul>
-          <li>Consent (where applicable, such as marketing cookies)</li>
-          <li>Legitimate interests (e.g., service improvement and analytics)</li>
-          <li>Legal obligation</li>
-          <li>Contractual necessity</li>
-        </ul>
-
-        <h2>4. Data Sharing & Third Parties</h2>
-        <p>We do not share your data with third parties, except:</p>
-        <ul>
-          <li>With trusted service providers for hosting and analytics (e.g., Google Analytics)</li>
-          <li>With legal authorities if required by law</li>
-        </ul>
-        <p>All providers we work with are bound by appropriate data protection agreements.</p>
-
-        <h2>5. Data Security</h2>
-        <p>We take data security seriously and follow:</p>
-        <ul>
-          <li>ISO/IEC 27001:2022 certified ISMS practices</li>
-          <li>TPN Gold-aligned security controls</li>
-        </ul>
-        <p>We implement industry-standard security measures, including:</p>
-        <ul>
-          <li>Data encryption</li>
-          <li>Access restrictions</li>
-          <li>Regular security audits</li>
-        </ul>
-
-        <h2>6. Data Retention</h2>
-        <p>We follow defined data retention timelines per our internal Data Retention Policy and securely dispose of data when no longer required.</p>
-
-        <h2>7. Your Rights</h2>
-        <p>Depending on your location, you may have the following rights:</p>
-        <ul>
-          <li>Access: Request access to your personal data.</li>
-          <li>Correction: Request corrections to inaccurate data.</li>
-          <li>Deletion: Request deletion of your personal data.</li>
-          <li>Objection & Restriction: Object to or restrict certain data processing activities.</li>
-          <li>Data Portability: Request a copy of your data in a portable format.</li>
-        </ul>
-        <p>
-          To exercise these rights, please contact us at 
-          <a href="mailto:legal@entity.ltd" style="color: red;">legal@entity.ltd</a> or request access via our secure 
-          <a href="https://trust.the-entity.studio/" target="_blank" style="color: red;">Trust Portal</a> (available to partners under NDA).
-        </p>
-
-        <h2>8. International Data Transfers</h2>
-        <p>We operate across the UK, EU, and India. Data transfers between these regions are safeguarded under GDPR 
-        and applicable regional laws.</p>
-
-        <h2>9. Changes to This Policy</h2>
-        <p>We may update this policy as needed. The latest version will always be available on our website.</p>
-
-        <h2>10. Contact Us</h2>
-        <p>For privacy concerns, you can reach us at:</p>
-        <p><strong>The Entity Studios</strong> (UK, EU, and India)</p>
-        <p>Email: <a href="mailto:legal@entity.ltd" style="color: red;">legal@entity.ltd</a></p>
-
-        <p class="mt-4 mb-4">By using our services, you acknowledge and agree to this Privacy Policy.</p>
       </div>
     </div>
   </div>

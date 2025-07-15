@@ -449,7 +449,7 @@
             <div id="smooth-content">
 
 
-<!-- Terms and Conditions CSS applied to Cookie Policy -->
+<!-- Terms and Conditions CSS applied to Privacy Policy -->
 <style>
   h2 {
     text-transform: none;
@@ -481,12 +481,6 @@
     font-weight: 600;
   }
 
-  .terms-section h4 {
-    margin-top: 1.5rem;
-    font-weight: 600;
-  }
-
-
   /* Paragraph and list styles */
   .terms-section p,
   .terms-section ul,
@@ -503,8 +497,7 @@
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .terms-section h1,
-    .terms-section h2,
-    .terms-section h4 {
+    .terms-section h2 {
       text-align: center;
     }
 
@@ -525,82 +518,352 @@
   }
 </style>
 
-<section class="terms-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10 col-md-12 col-sm-12">
-        <h1 class="mb-3 mt-5 pt-5">Cookie Policy</h1>
-        <p class="text">Last Updated: July 10, 2025</p>
+<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
-        <p>
-          The Entity Studios operates across the UK, EU, and India through its registered entities: The Entity Studios Private Limited (India), The-Entity Ltd (UK), and The Entity OÜ (Estonia) (hereinafter referred to as <strong>“The Entity Studios”</strong>).
-          We are committed to respecting your privacy and ensuring transparency in how cookies are used across our website.
+<style>
+    body {
+        background-color: #121212;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .legal-section {
+        background-color: #1a1a1a;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .legal-box {
+        background-color: #262626;
+        padding: 35px;
+        border-radius: 15px;
+        margin-bottom: 35px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .legal-box h2 {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        color: #e74c3c; /* Bright red */
+        border-bottom: 3px solid #ff1900;
+        padding-bottom: 12px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .legal-box h2 i {
+        margin-right: 15px;
+        font-size: 1.8rem;
+    }
+
+    .legal-box h3 {
+        font-size: 1.4rem;
+        color: #008cff; /* Bright red */
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .legal-box p,
+    .legal-box ul {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .legal-box ul {
+        padding-left: 30px;
+    }
+
+    .legal-box a {
+        color: #187700; /* Bright red */
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .legal-box a:hover {
+        color: #00a2ff; /* Darker red on hover */
+    }
+
+    .table th,
+    .table td {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .table-dark {
+        background-color: #1a1a1a;
+    }
+
+    .table-dark th,
+    .table-dark td {
+        border-color: #444;
+    }
+
+    .alert-warning {
+        background-color: #333;
+        color: #ff9800;
+        padding: 25px;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        font-weight: normal;
+    }
+
+    .footer {
+        background-color: #1c1c1c;
+        padding: 25px 0;
+        text-align: center;
+        color: #999;
+    }
+
+    .footer a {
+        color: #ff1900; /* Bright red */
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        color: #ff1900; /* Darker red on hover */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .legal-box {
+            padding: 20px;
+        }
+
+        .footer {
+            padding: 15px 0;
+        }
+
+        .container {
+            padding: 15px;
+        }
+
+        .legal-box h2 {
+            font-size: 1.8rem;
+        }
+
+        .legal-box h3 {
+            font-size: 1.2rem;
+        }
+
+        .legal-box p,
+        .legal-box ul {
+            font-size: 1rem;
+        }
+    }
+
+    .highlight {
+        color: #ff1900; /* Bright red */
+        font-weight: bold;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        color: #ff1900; /* Bright red */
+        font-weight: bold;
+        margin-top: 30px;
+        text-transform: uppercase;
+    }
+
+    .contact-email {
+        color: #ff1900; /* Bright red */
+        font-weight: bold;
+    }
+
+    .contact-email:hover {
+        color: #ff1900; /* Darker red on hover */
+    }
+
+    .icon {
+        font-size: 1.8rem;
+        margin-right: 15px;
+    }
+
+    .box-border {
+        border: 1px solid #e74c3c; /* Bright red */
+        padding: 25px;
+        margin-top: 15px;
+        border-radius: 12px;
+        background-color: #333;
+    }
+
+    .box-border ul {
+        padding-left: 20px;
+    }
+
+    .box-border li {
+        margin-bottom: 12px;
+    }
+
+    /* Hover Effects for Headings */
+    .legal-box h2:hover {
+        color: #ff1900; /* Darker red */
+        border-color: #ff1900;
+    }
+
+    .section-title:hover {
+        color: #ff1900; /* Darker red */
+    }
+
+    /* Red Theme for Registered Legal Entities Section */
+    .company-section {
+        margin-top: 20px;
+    }
+
+    .company-box {
+        background-color: #202020;
+        border-radius: 10px;
+        margin: 15px 0;
+        padding: 15px;
+        color: white;
+    }
+
+    .company-box a {
+        color: #00aeff; /* Bright red */
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+
+    .company-box a:hover {
+        color: #0011ff; /* Darker red */
+        text-decoration: underline;
+    }
+
+    .glow-text {
+      color: transparent;
+      background: linear-gradient(90deg, #00bfff, #00ff99);
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: fadeGlow 1.5s infinite;
+    }
+
+    @keyframes fadeGlow {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+</style>
+
+
+
+<section class="legal-section">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-11 col-md-12">
+
+        <!-- Title Box -->
+        <div class="legal-box text-center">
+          <h1 class="fw-bold mb-3">Cookie Policy</h1>
+          <p class="text-secondary">Last Updated: <span class="highlight">July 10, 2025</span></p>
+        </div>
+
+        <!-- Intro -->
+        <div class="legal-box">
+          <p>
+            The Entity Studios operates across the UK, EU, and India through its registered entities: The Entity Studios Private Limited (India), The-Entity Ltd (UK), and The Entity OÜ (Estonia) 
+            (hereinafter referred to as <strong>“The Entity Studios”</strong>). We are committed to respecting your privacy and ensuring transparency in how cookies are used across our website.
+          </p>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="legal-box">
+          <h2><i class="fas fa-cookie-bite text-warning icon"></i>1. What Are Cookies?</h2>
+          <p>Cookies are small text files stored on your device when you visit a website. They help us improve your browsing experience, remember preferences, and measure website traffic.</p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="legal-box">
+          <h2><i class="fas fa-bullseye text-danger icon"></i>2. Why We Use Cookies</h2>
+          <p>We use cookies only for essential functionality and analytics purposes. Specifically:</p>
+          <ul>
+            <li>To ensure secure, stable performance of our website</li>
+            <li>To understand visitor behavior and optimize user experience via Google Analytics</li>
+            <li>To comply with legal and technical best practices</li>
+          </ul>
+          <p>We do not use cookies to track personal identities, nor do we sell or share any visitor data.</p>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="legal-box">
+          <h2><i class="fas fa-list text-info icon"></i>3. Types of Cookies in Use</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered mt-3" style="background-color: #000; color: #fff; border-color: #444;">
+              <thead>
+                <tr>
+                  <th scope="col" style="background-color: #111; color: #fff; border: 1px solid #444;">Type</th>
+                  <th scope="col" style="background-color: #111; color: #fff; border: 1px solid #444;">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="background-color: #000; color: #fff; border: 1px solid #444;">Essential Cookies</td>
+                  <td style="background-color: #000; color: #fff; border: 1px solid #444;">Required for website core functionality (e.g., page loading, session auth)</td>
+                </tr>
+                <tr>
+                  <td style="background-color: #000; color: #fff; border: 1px solid #444;">Analytics Cookies</td>
+                  <td style="background-color: #000; color: #fff; border: 1px solid #444;">Used via Google Analytics to understand visitor behavior anonymously</td>
+                </tr>
+                <tr>
+                  <td style="background-color: #000; color: #fff; border: 1px solid #444;">Functional Cookies</td>
+                  <td style="background-color: #000; color: #fff; border: 1px solid #444;">Used for remembering preferences like language or theme</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Note:</strong> We do not serve ads or use third-party advertising cookies on our site.</p>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="legal-box">
+          <h2><i class="fas fa-sliders-h text-secondary icon"></i>4. Managing Cookies</h2>
+          <p>You can manage or disable cookies directly from your browser settings. Please note, blocking essential cookies may affect the site’s usability.</p>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="legal-box">
+          <h2><i class="fas fa-shield-alt text-success icon"></i>5. Data Compliance & Security</h2>
+          <ul>
+            <li>GDPR (EU)</li>
+            <li>UK Data Protection Act</li>
+            <li>Indian IT & Privacy Guidelines</li>
+          </ul>
+          <p>Our production systems follow ISO/IEC 27001:2022 standards and TPN Gold-aligned security practices. We do not store personal data via cookies and take all reasonable precautions to ensure anonymous data processing.</p>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="legal-box">
+          <h2><i class="fas fa-sync-alt text-warning icon"></i>6. Updates to This Policy</h2>
+          <p>This policy may be updated to reflect changes in law, tech tools, or business practices. We encourage you to review this page regularly.</p>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="legal-box">
+          <h2><i class="fas fa-envelope text-danger icon"></i>7. Contact</h2>
+          <p>Cookie Grievance: Users may report cookie-related concerns or request clarification by contacting 
+            <a href="mailto:privacy@entity.ltd" class="contact-email">privacy@entity.ltd</a>.
+          </p>
+          <p><strong>Anonymization:</strong> Data collected through cookies is anonymized and used strictly for performance monitoring and aggregated analytics. We do not use cookies for profiling or targeted advertising.</p>
+        </div>
+
+        <!-- Footer -->
+        <p class="mt-4 mb-4 text-secondary text-center">
+          By continuing to browse our website, you consent to our limited and transparent use of cookies.
         </p>
 
-        <h2>1. What Are Cookies?</h2>
-        <p>Cookies are small text files stored on your device when you visit a website. They help us improve your browsing experience, remember preferences, and measure website traffic.</p>
-
-        <h2>2. Why We Use Cookies</h2>
-        <p>We use cookies only for essential functionality and analytics purposes. Specifically:</p>
-        <ul>
-          <li>To ensure secure, stable performance of our website</li>
-          <li>To understand visitor behavior and optimize user experience via Google Analytics</li>
-          <li>To comply with legal and technical best practices</li>
-        </ul>
-        <p>We do not use cookies to track personal identities, nor do we sell or share any visitor data.</p>
-
-        <h2>3. Types of Cookies in Use</h2>
-<table class="table table-bordered mt-3" style="background-color: #000; color: #fff; border-color: #444;">
-  <thead>
-    <tr>
-      <th scope="col" style="background-color: #111; color: #fff; border: 1px solid #444;">Type</th>
-      <th scope="col" style="background-color: #111; color: #fff; border: 1px solid #444;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="background-color: #000; color: #fff; border: 1px solid #444;">Essential Cookies</td>
-      <td style="background-color: #000; color: #fff; border: 1px solid #444;">Required for website core functionality (e.g., page loading, session auth)</td>
-    </tr>
-    <tr>
-      <td style="background-color: #000; color: #fff; border: 1px solid #444;">Analytics Cookies</td>
-      <td style="background-color: #000; color: #fff; border: 1px solid #444;">Used via Google Analytics to understand visitor behavior anonymously</td>
-    </tr>
-    <tr>
-      <td style="background-color: #000; color: #fff; border: 1px solid #444;">Functional Cookies</td>
-      <td style="background-color: #000; color: #fff; border: 1px solid #444;">Used for remembering preferences like language or theme</td>
-    </tr>
-  </tbody>
-</table>
-
-
-        <p><strong>Note:</strong> We do not serve ads or use third-party advertising cookies on our site.</p>
-
-        <h2>4. Managing Cookies</h2>
-        <p>You can manage or disable cookies directly from your browser settings. Please note, blocking essential cookies may affect the site’s usability.</p>
-
-        <h2>5. Data Compliance & Security</h2>
-        <ul>
-          <li>GDPR (EU)</li>
-          <li>UK Data Protection Act</li>
-          <li>Indian IT & Privacy Guidelines</li>
-        </ul>
-        <p>Our production systems follow ISO/IEC 27001:2022 standards and TPN Gold-aligned security practices. We do not store personal data via cookies and take all reasonable precautions to ensure anonymous data processing.</p>
-
-        <h2>6. Updates to This Policy</h2>
-        <p>This policy may be updated to reflect changes in law, tech tools, or business practices. We encourage you to review this page regularly.</p>
-
-        <h2>7. Contact</h2>
-        <p>Cookie Grievance: Users may report cookie-related concerns or request clarification by contacting <a href="mailto:privacy@entity.ltd" style="color: red;">privacy@entity.ltd</a>.</p>
-
-        <p><strong>Anonymization:</strong> Data collected through cookies is anonymized and used strictly for performance monitoring and aggregated analytics. We do not use cookies for profiling or targeted advertising.</p>
-
-        <p class="mt-4 mb-4">By continuing to browse our website, you consent to our limited and transparent use of cookies.</p>
       </div>
     </div>
   </div>
 </section>
-
 
 
 
