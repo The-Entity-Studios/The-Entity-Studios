@@ -283,28 +283,61 @@
 
 
 <style>
-          .responsive-hero {
-  background-image: url('assets/img/home-1/hero/services-bg.avif'); /* Adjust if needed */
+.responsive-hero {
+  position: relative;
+  min-height: 50vh;
+  background-image: url('assets/img/home-1/hero/TESSHero_Bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 30vh; /* Mobile default */
+  overflow: hidden;
 }
 
-/* For tablets and up (768px+) */
+/* Hide video by default */
+.responsive-hero video {
+  display: none;
+}
+
+/* Show video only on screens ≥768px */
 @media (min-width: 768px) {
   .responsive-hero {
     min-height: 85vh;
   }
+
+  .responsive-hero video {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+  }
 }
 
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 </style>
 
-<section>
-        <div id="smooth-wrapper">
-            <div id="smooth-content">
-                <div class="hero-section hero-1 responsive-hero"></div>
-
+<div id="smooth-wrapper">
+  <div id="smooth-content">
+    <div class="hero-section hero-1 responsive-hero">
+      <video autoplay muted loop playsinline aria-hidden="true">
+        <source src="assets/img/home-1/hero/Logo_AIc.mp4" type="video/mp4">
+        <!-- No need for fallback inside <video> tag; background image already handles it -->
+      </video>
+    </div>
 
 
 
