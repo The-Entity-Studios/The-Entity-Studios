@@ -221,19 +221,67 @@
     position: relative;
   }
 
-  .accordion-card-mob {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    color: white;
-    border-radius: 20px;
-    overflow: hidden;
-  }
+
+
+
+@keyframes shakeXOnly {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+.shake-slide {
+  animation: shakeXOnly 0.5s ease-in-out infinite;
+  /* No scale or rotation here! */
+  will-change: transform;
+}
+
+
+/* Ensure active/hovered slide has no animation or forced transform */
+.swiper-slide.swiper-slide-active,
+.swiper-slide.swiper-slide-active:hover {
+  animation: none !important;
+  transform: none !important;
+}
+
+  
+.accordion-card-mob {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* Add hover effect */
+.accordion-card-mob:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: Subtle overlay lighting effect on hover using ::after */
+.accordion-card-mob::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.05);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.accordion-card-mob:hover::after {
+  opacity: 1;
+}
 
   .overlay {
     position: absolute;

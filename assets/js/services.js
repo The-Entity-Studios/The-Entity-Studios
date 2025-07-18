@@ -273,7 +273,38 @@
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  function attachShakeEffect(swiperSelector) {
+    const swiperContainer = document.querySelector(swiperSelector);
+    if (!swiperContainer) return;
 
+    swiperContainer.addEventListener('mouseover', function (event) {
+      const targetSlide = event.target.closest('.swiper-slide');
+      if (!targetSlide || !targetSlide.classList.contains('swiper-slide-active')) return;
+
+      const prevSlide = targetSlide.previousElementSibling;
+      const nextSlide = targetSlide.nextElementSibling;
+
+      if (prevSlide) prevSlide.classList.add('shake-slide');
+      if (nextSlide) nextSlide.classList.add('shake-slide');
+    });
+
+    swiperContainer.addEventListener('mouseout', function (event) {
+      const targetSlide = event.target.closest('.swiper-slide');
+      if (!targetSlide || !targetSlide.classList.contains('swiper-slide-active')) return;
+
+      const prevSlide = targetSlide.previousElementSibling;
+      const nextSlide = targetSlide.nextElementSibling;
+
+      if (prevSlide) prevSlide.classList.remove('shake-slide');
+      if (nextSlide) nextSlide.classList.remove('shake-slide');
+    });
+  }
+
+  // Apply to both sliders
+  attachShakeEffect('.mySwiper');
+  attachShakeEffect('.mySwiperFour');
+});
 
 
 
