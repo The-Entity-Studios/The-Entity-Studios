@@ -16,15 +16,15 @@
   position: relative;
 }
 
-/* On hover: play pop animation ONCE, then hold */
-.swiper-slide:hover {
+/* ONLY apply pop animation to active Swiper slide on hover */
+.swiper-slide.swiper-slide-active:hover {
   z-index: 10 !important;
   animation: popAndSettle 1.3s cubic-bezier(.18,.89,.72,1.28) forwards !important;
   box-shadow: 0 0 22px 8px rgba(255,0,0,0.23);
 }
 
 /* Ensure card doesn't immediately shrink after the animation */
-.swiper-slide.is-popped {
+.swiper-slide.swiper-slide-active.is-popped {
   transform: scale(1.08);
   box-shadow: 0 0 16px 7px rgba(255,0,0,0.21);
 }
@@ -43,6 +43,7 @@
     box-shadow: 0 0 16px 7px rgba(255,0,0,0.21);
   }
 }
+
 
 
 /* ===== HEADER BACKGROUND CUSTOMIZATION ===== */
