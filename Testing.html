@@ -6,6 +6,8 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Swiper CSS -->
+           <link rel="stylesheet" href="assets/css/services.css">  
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <style>
     body {
@@ -65,34 +67,108 @@
 </head>
 <body>
 
-<div class="container text-center mt-5">
-  <h2 class="mb-4">Our 3D Image Carousel</h2>
-  <!-- Swiper -->
+<!-- GT Team Section Modified Start - Desktop -->
+<section class="gt-service-section section-padding fix d-flex align-items-center justify-content-center">
+  
+
+
+  <!-- Main container -->
+  <div class="container hide-mobile" style="max-width: 1200px; min-height: auto;">
+    <div class="gt-team-wrapper position-relative">
+
+      <!-- Lottie animation container (top) -->
+      <!-- <div id="lottie-top-animation" class="position-absolute"></div> -->
+<img id="bg-image-replacement2" src="assets/img/home-3/bgred.png" alt="redbg">
+
+    
+ <!-- Overlay paragraph -->
+  <h5 class="overlay-text text-center mb-5 tz-itm-title tz-itm-anim">From keyframe to engine-ready, our animations are crafted for expressive performance and seamless <br> real-time integration, powering everything from gameplay to cinematics.</h5>
+
+      <!-- Swiper slider for services -->
+      <div id="services"  class="swiper gt-service-slider">
+
+        <!-- Vertical text label -->
+        <div class="vertical-text2">Animation</div>
+
+
+<!-- Swiper Section Container -->
+<div class="container" style="max-width: 1200px; margin: auto;">
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <!-- Card 1 -->
+
+      <!-- Slide 1 -->
       <div class="swiper-slide">
-        <img src="https://via.placeholder.com/300x400?text=Card+1" alt="Card 1">
+        <div class="accordion-card-mob" style="background-image: url('assets/img/home-3/services/TestCard7.jpg');">
+          <div class="overlay"></div>
+          <div class="accordion-title-mob">🛠️ Rigging & <span>Character setup</span></div>
+          <div class="accordion-body-mob">
+            <ul>
+              <li>Custom skeleton creation tailored for game-ready characters.</li>
+              <li>Advanced deformation setup for natural and dynamic movement.</li>
+              <li>Facial rigging for expressive performances.</li>
+              <li>Modular rigs optimized for animation pipelines.</li>
+              <li>Physics-based rigging for cloth, hair, and props.</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <!-- Card 2 -->
+
+      <!-- Slide 2 -->
       <div class="swiper-slide">
-        <img src="https://via.placeholder.com/300x400?text=Card+2" alt="Card 2">
+        <div class="accordion-card-mob" style="background-image: url('assets/img/home-3/services/TestCard3.jpg');">
+          <div class="overlay"></div>
+          <div class="accordion-title-mob">⚙️ Technical <span>integration</span></div>
+          <div class="accordion-body-mob">
+            <ul>
+              <li>Animation implementation and state machine setup.</li>
+              <li>IK/FK blending and procedural animation workflows.</li>
+              <li>Retargeting and optimizing animation for game engines.</li>
+              <li>Blueprint and animation graph setup for seamless interactions.</li>
+              <li>Root motion and physics-based movement integration.</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <!-- Card 3 -->
+
+      <!-- Slide 3 -->
       <div class="swiper-slide">
-        <img src="https://via.placeholder.com/300x400?text=Card+3" alt="Card 3">
+        <div class="accordion-card-mob" style="background-image: url('assets/img/home-3/services/TestCard5.jpg');">
+          <div class="overlay"></div>
+          <div class="accordion-title-mob">🎬 Cinematic & <span>Gameplay animation</span></div>
+          <div class="accordion-body-mob">
+            <ul>
+              <li>High‑quality keyframe and mocap‑driven animations.</li>
+              <li>Stylized and realistic animation styles tailored for your game.</li>
+              <li>Cinematic sequences for trailers, cutscenes, and storytelling.</li>
+              <li>Combat, locomotion, and interaction animations for immersive gameplay.</li>
+              <li>Polishing and refining animations for final implementation.</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <!-- Card 4 -->
-      <div class="swiper-slide">
-        <img src="https://via.placeholder.com/300x400?text=Card+4" alt="Card 4">
-      </div>
+
     </div>
-    <!-- Controls -->
-    <div class="swiper-button-next"></div>
+
+    <!-- Navigation Arrows -->
     <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- Pagination Dots -->
     <div class="swiper-pagination"></div>
   </div>
 </div>
+
+
+
+
+      </div> <!-- End swiper -->
+
+
+    </div> <!-- End gt-team-wrapper -->
+  </div> <!-- End container -->
+  
+
+</section>
 
 <!-- Bootstrap JS (Optional for modal, etc.) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
