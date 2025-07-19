@@ -9,35 +9,41 @@
   transform: none;
   /* ... */
 }
-/* Apply transition to all swiper slides */
 .swiper-slide {
-  transition: transform 0.4s ease, box-shadow 0.4s ease !important;
-  will-change: transform !important;
+  transition: transform 0.25s cubic-bezier(.22,1.1,.56,1.02), box-shadow 0.2s;
+  will-change: transform;
   overflow: hidden;
   position: relative;
 }
 
-/* Only scale active slide when hovered */
-.swiper-slide.swiper-slide-active:hover {
-  transform: scale(1.25) !important;
+/* On hover: play pop animation ONCE, then hold */
+.swiper-slide:hover {
   z-index: 10 !important;
-   animation: glowPulse 1.8s infinite ease-in-out;
-	box-shadow:
-		0 0 5px rgba(255, 0, 0, 0.7),    /* red glow */
-		0 0 10px rgba(255, 0, 0, 0.5),    /* outer spread */
-		0 0 25px rgba(255, 0, 0, 0.3)!important;    /* soft glow layers */ }
+  animation: popAndSettle 1.3s cubic-bezier(.18,.89,.72,1.28) forwards !important;
+  box-shadow: 0 0 22px 8px rgba(255,0,0,0.23);
+}
 
-@keyframes glowPulse {
+/* Ensure card doesn't immediately shrink after the animation */
+.swiper-slide.is-popped {
+  transform: scale(1.08);
+  box-shadow: 0 0 16px 7px rgba(255,0,0,0.21);
+}
+
+@keyframes popAndSettle {
   0% {
-    box-shadow: 0 0 10px red, 0 0 10px rgba(255, 0, 0, 0.5);
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255,0,0,0.0);
   }
   50% {
-    box-shadow: 0 0 20px red, 0 0 40px rgba(255, 0, 0, 0.7);
+    transform: scale(1.05);
+    box-shadow: 0 0 32px 14px rgba(255,0,0,0.32);
   }
   100% {
-    box-shadow: 0 0 10px red, 0 0 10px rgba(255, 0, 0, 0.5);
+    transform: scale(1);
+    box-shadow: 0 0 16px 7px rgba(255,0,0,0.21);
   }
 }
+
 
 /* ===== HEADER BACKGROUND CUSTOMIZATION ===== */
 
@@ -561,6 +567,9 @@
 	 z-index: 2;
 	 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
+
+
+
 /* Optional: Subtle overlay lighting effect on hover using ::after */
  .accordion-card-mob::after {
 	 content: "";
