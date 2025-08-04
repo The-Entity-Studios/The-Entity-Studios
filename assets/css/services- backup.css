@@ -732,16 +732,16 @@
 
   /* Section-specific background images */
   .service-section.img-1 {
-    background-image: url('assets/img/home-1/service/img-2.png');
+    background-image: url('assets/img/home-1/service/img-2.avif');
   }
   .service-section.img-2 {
-    background-image: url('assets/img/home-1/service/img-2.png');
+    background-image: url('assets/img/home-1/service/img-2.avif');
   }
   .service-section.img-3 {
-    background-image: url('assets/img/home-1/service/img-2.png');
+    background-image: url('assets/img/home-1/service/img-2.avif');
   }
   .service-section.img-4 {
-    background-image: url('assets/img/home-1/service/img-2.png');
+    background-image: url('assets/img/home-1/service/img-2.avif');
   }
 
   /* Headings inside each service card */

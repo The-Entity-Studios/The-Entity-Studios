@@ -63,7 +63,7 @@
 
         &::before {
             @include before;
-            background: linear-gradient(180deg, rgba(255, 8, 8, 0.50) 0%, rgba(11, 14, 19, 0.50) 100%), url(../../assets/img/home-3/service/shape.png);
+            background: linear-gradient(180deg, rgba(255, 8, 8, 0.50) 0%, rgba(11, 14, 19, 0.50) 100%), url(../../assets/img/home-3/service/shape.avif);
             opacity: 0;
             visibility: hidden;
             @include transition;
